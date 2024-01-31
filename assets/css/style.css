@@ -1,41 +1,67 @@
-.hide{
+:root{
+    --very-dark-color: #000000ff;
+    --dark-color: #3D0603ff;
+    --main-color: #5E4F3Fff;
+    --light-color: #E9CB80;
+    --bright-color: #DDA515;
+    --base-color: #625E5Dff;
+    --contrast-color: #751911ff;
+}
+
+/* Hides elements with the .hide class by default */
+.hide {
     display: none;
 }
 
-.display{
-    display:block;
+/* Displays elements with the .display class */
+.display {
+    display: block;
 }
+
+#start-screen.hide {
+    display: none;
+}
+
+#game-screen.hide {
+    display: none;
+}
+
+#end-screen.hide {
+    display: none;
+}
+/* Styling for the start screen */
 #start-screen {
-    background-image: url('../images/statGameBG.jpg'); /* Replace with the path to your background image */
+    background-image: url('../images/statGameBG.jpg');
     background-size: cover;
     background-position: center;
     color: white;
-    padding: 20px;
+    padding: 100px;
     text-align: center;
     height: 100vh; /* Set height to 100% of the viewport height */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-  }
+}
 
-  .start-image {
+/* Styling for the container of the start image */
+.start-image {
     position: relative;
     display: inline-block;
 }
 
-#welcome{
+/* Styling for the welcome text */
+#welcome {
     font-size: 5em;
     font-weight: bold;
     color: #333;
     background: linear-gradient(to left, #f3f2f2, #050505);
     -webkit-background-clip: text;
     color: transparent;
-    padding: 5px;
     margin-bottom: 5px;
     -webkit-text-stroke: 2px #fc0404;
 }
 
-.btn {
+/* Styling for the button */
+#start-screen .btn {
     position: absolute;
     top: 70%;
     left: 50%;
@@ -48,11 +74,13 @@
     font-size: 2rem;
 }
 
+/* Styling for images within the start image container */
 .start-image img {
     max-width: 100%;
     height: auto;
 }
 
+/* Styling for the hover image within the start image container */
 .start-image .hover-image {
     position: absolute;
     top: 50%;
@@ -62,19 +90,64 @@
     transition: opacity 0.3s ease-in-out;
 }
 
+/* Hover effect: Show the hover image when hovering over the start image container */
 .start-image:hover .hover-image {
     opacity: 1;
 }
 
+/* Hide the hover image when not hovering over the start image container */
 .start-image:not(:hover) .hover-image {
     display: none;
 }
 
+/* Fade out the main image when hovering over the start image container */
 .start-image:hover img:not(.hover-image) {
     opacity: 0;
 }
 
+/* Show the main image when not hovering over the start image container */
 .start-image:not(:hover) img:not(.hover-image) {
     opacity: 1;
 }
 
+#end-screen {
+    background-image: url('../images/endGameBG.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px;
+    text-align: center;
+    height: 100vh; /* Set height to 100% of the viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+#end-screen .btn {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: var(--very-dark-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+#end-screen h1{
+    font-family: 'Great Vibes', cursive;
+    font-size: 10rem;
+}
+
+#end-screen p{
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+}
+
+#userName {
+    width: 150px;
+    font-size: 14px;
+    background-color: #050505;
+    color: white;
+}

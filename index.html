@@ -11,7 +11,9 @@
     <!--Custom CSS-->
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
@@ -21,7 +23,7 @@
 <body>
     <div class="wrapper">
         <!-- This div will be displayed when the game starts -->
-        <div id="start-screen" class="display text-center m-3">
+        <div id="start-screen" class="hide">
             <h1 id="welcome">WELCOME</h1>
             <div class="start-image">
                 <button type="button" class="btn">PLAY GAME</button>
@@ -29,52 +31,49 @@
                 <img src="./assets/images/close.png" alt="close" class="hover-image">
             </div>
         </div>
-    
+
         <!-- This div will display the game with questions -->
-        <div id="game" class="hide">
-    
-            <div id="heading" class="hide">
-                <h1>GUESS THE MOVIE</h1>
-            </div>
-    
-            <!-- This div will display the first clue -->
-            <div id="firstclue" class="hide">
-                <div>
-                    <h2>Actors:</h2>
+        <div id="game-screen" class="hide">
+            <div id="slide">
+                <div id="heading" class="display">
+                    <h1>GUESS THE MOVIE</h1>
+                </div>
+                <div class="clues">
+                    <!-- This div will display the first clue -->
+                    <div id="firstclue" class="display text-left">
+                        <div>
+                            <h2>🎭 Cast:</h2>
+                        </div>
+                    </div>
+
+                    <!-- This div will display the second clue -->
+                    <div id="secondClue" class="display text-left">
+                        <div>
+                            <h2>🎥 Genre:</h2>
+                        </div>
+                    </div>
+
+                    <!-- This div will display the third clue -->
+                    <div id="thirdClue" class="display text-left">
+                        <div>
+                            <h2>🎞️ Plot:</h2>
+                        </div>
+                    </div>
+                </div>
+                <div id="choices" class="btn-group-vertical">
+                    <button type="button" class="btn btn-secondary m-2" id="option1">OPTION 1</button>
+                    <button type="button" class="btn btn-secondary m-2" id="option2">OPTION 2</button>
+                    <button type="button" class="btn btn-secondary m-2" id="option3">OPTION 3</button>
+                    <button type="button" class="btn btn-secondary m-2" id="option4">OPTION 4</button>
                 </div>
             </div>
-    
-            <!-- This div will display the second clue -->
-            <div id="secondClue" class="hide">
-                <div>
-                    <h2>Dates:</h2>
-                </div>
-            </div>
-    
-            <!-- This div will display the third clue -->
-            <div id="thirdClue" class="hide">
-                <div>
-                    <h2>Plot:</h2>
-                </div>
-            </div>
-    
-            <div id="choices">
-                <!-- Buttons for selecting different options -->
-                <button type="button" class="btn btn-primary btn-lg" id="option1">OPTION 1</button>
-                <button type="button" class="btn btn-secondary btn-lg" id="option2">OPTION 2</button>
-                <button type="button" class="btn btn-success btn-lg" id="option3">OPTION 3</button>
-                <button type="button" class="btn btn-warning btn-lg" id="option4">OPTION 4</button>
-            </div>
-    
+
             <div class="progress">
                 <!-- Progress bar indicating the player's progress in the game -->
-                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
-                    aria-valuemax="100">25%</div>
+                <div class="progress-bar bg-danger" role="progressbar" style="width: 10%;" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">10%</div>
             </div>
-            <p>This section will be visible during the game. Initially, "Actors" will be displayed.</p>
-            <p>If the user's answer is incorrect, "Date" will be displayed. If wrong again, "Plot" will be shown.</p>
-            <p>After 3 attempts or if the user's answer is correct, all the clues will be hidden, and feedback will be displayed.</p>
-            
+
             <!-- This div will display feedback message, GIPHY with buttons to proceed -->
             <div id="feedback" class="hide">
                 <!-- Heading indicating whether the player performed well or not -->
@@ -92,36 +91,35 @@
                 <!-- The poster will be displayed if the user presses the "SEE THE POSTER" button -->
                 <div id="poster" class="hide"></div>
             </div>
-            <p>The feedback message and GIPHY will display a message (depending on the test result).</p>
-            <p>The user will have the option to see a movie poster or go to the next question.</p>
-            
-            <!-- This div will display the end game view -->
-            <div id="end-screen" class="hide">
-                <h1>END GAME</h1>
-                <p>Your final score is...</p>
-                <p>Enter initials: <input type="text" id="initials" maxlength="3" /></p>
-                <button type="button" class="btn btn-danger btn-lg" id="submit">SUBMIT</button>
+        </div>
+        <!-- This div will display the end game view -->
+        <div id="end-screen" class="display">
+            <h1>The End</h1>
+            <p>Your final score is</p>
+            <div>
+                <p>Enter Your Name: </p>
+                <input type="text" id="userName"/>
+                <p> & </p>
             </div>
-            <p>When the time ends or the user answers all questions, this section will be displayed.</p>
-            <p>The user will be asked to type initials and submit the results (which will be saved in Local Storage).</p>
-            <p>When the user presses submit, it will take them to the leaderboard HTML.</p>
+            <button type="button" class="btn btn-danger" id="submit">SUBMIT</button>
         </div>
     </div>
-    
+    </div>
 
 
-<!-- Bootstrap JS and Popper.js (required for Bootstrap) -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<!-- Custom JS file -->
-<script src="./assets/js/questionapi.js"></script>
-<script src="./assets/js/quiz.js"></script>
-<script src="./assets/js/scores.js"></script>
-<!-- Day.js -->
-<script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.6"></script>
+
+    <!-- Bootstrap JS and Popper.js (required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Custom JS file -->
+    <script src="./assets/js/questionapi.js"></script>
+    <script src="./assets/js/quiz.js"></script>
+    <script src="./assets/js/scores.js"></script>
+    <!-- Day.js -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.6"></script>
 </body>
 
 </html>
