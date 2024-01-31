@@ -29,7 +29,6 @@
 #end-screen.hide {
     display: none;
 }
-/* Styling for the start screen */
 #start-screen {
     background-image: url('../images/statGameBG.jpg');
     background-size: cover;
@@ -110,7 +109,16 @@
     opacity: 1;
 }
 
-#end-screen {
+.hide {
+    display: none;
+  }
+
+  .timer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  #end-screen {
     background-image: url('../images/endGameBG.jpg');
     background-size: cover;
     background-position: center;
