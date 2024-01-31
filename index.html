@@ -21,37 +21,38 @@
 <body>
     <div class="wrapper">
         <!-- This div will be displayed when the game starts -->
-        <div id="start-screen" class="display/hide">
-            <h1>WELCOME</h1>
-            <img><!-- Placeholder for an image related to the game -->
-            <button type="button" class="btn btn-secondary btn-lg">START GAME</button>
-            <p>This section displays the start screen with a welcome message, an image related to the game, and a button to initiate the game.</p>
-            <p>It will be hidden when the user presses the "START GAME" button.</p>
+        <div id="start-screen" class="display text-center m-3">
+            <h1 id="welcome">WELCOME</h1>
+            <div class="start-image">
+                <button type="button" class="btn">PLAY GAME</button>
+                <img src="./assets/images/open.png" alt="open">
+                <img src="./assets/images/close.png" alt="close" class="hover-image">
+            </div>
         </div>
     
         <!-- This div will display the game with questions -->
-        <div id="game" class="display/hide">
+        <div id="game" class="hide">
     
-            <div id="heading" class="display/hide">
+            <div id="heading" class="hide">
                 <h1>GUESS THE MOVIE</h1>
             </div>
     
             <!-- This div will display the first clue -->
-            <div id="firstclue" class="display/hide">
+            <div id="firstclue" class="hide">
                 <div>
                     <h2>Actors:</h2>
                 </div>
             </div>
     
             <!-- This div will display the second clue -->
-            <div id="secondClue" class="display/hide">
+            <div id="secondClue" class="hide">
                 <div>
                     <h2>Dates:</h2>
                 </div>
             </div>
     
             <!-- This div will display the third clue -->
-            <div id="thirdClue" class="display/hide">
+            <div id="thirdClue" class="hide">
                 <div>
                     <h2>Plot:</h2>
                 </div>
@@ -75,11 +76,11 @@
             <p>After 3 attempts or if the user's answer is correct, all the clues will be hidden, and feedback will be displayed.</p>
             
             <!-- This div will display feedback message, GIPHY with buttons to proceed -->
-            <div id="feedback" class="display/hide">
+            <div id="feedback" class="hide">
                 <!-- Heading indicating whether the player performed well or not -->
                 <h1>WELL DONE / SORRY</h1>
                 <!-- Container for displaying GIPHY content, initially hidden -->
-                <div id="giphy" class="display/hide">
+                <div id="giphy" class="hide">
                     <!-- Placeholder for GIPHY content -->
                     <p>GIPHY</p>
                 </div>
@@ -89,13 +90,13 @@
                 <button type="button" class="btn btn-warning btn-lg" id="next">NEXT</button>
                 <!-- Container for displaying the poster, initially hidden -->
                 <!-- The poster will be displayed if the user presses the "SEE THE POSTER" button -->
-                <div id="poster" class="display/hide"></div>
+                <div id="poster" class="hide"></div>
             </div>
             <p>The feedback message and GIPHY will display a message (depending on the test result).</p>
             <p>The user will have the option to see a movie poster or go to the next question.</p>
             
             <!-- This div will display the end game view -->
-            <div id="end-screen" class="display/hide">
+            <div id="end-screen" class="hide">
                 <h1>END GAME</h1>
                 <p>Your final score is...</p>
                 <p>Enter initials: <input type="text" id="initials" maxlength="3" /></p>
