@@ -5,6 +5,17 @@
 .display{
     display:block;
 }
+
+
+.cast {
+    background-color: #fc0404;
+    background-position: center;
+}
+.mainContent {
+    background-color: aqua;
+}
+
+
 #start-screen {
     background-image: url('../images/statGameBG.jpg'); /* Replace with the path to your background image */
     background-size: cover;
