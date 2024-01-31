@@ -5,6 +5,7 @@
 .display{
     display:block;
 }
+
 #start-screen {
     background-image: url('../images/statGameBG.jpg'); /* Replace with the path to your background image */
     background-size: cover;
@@ -81,3 +82,10 @@
 .hide {
     display: none;
   }
+
+  .timer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
