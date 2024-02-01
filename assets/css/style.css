@@ -17,6 +17,14 @@
     background-image: url(..//images/sideImg.jpg);
 }
 
+#game-screen {
+    background-image: url(../images/movie.png);
+}
+
+#question {
+    background-color: #DDA515;
+}
+
 #start-screen{
     background-image: url(..//images/startGame.jpg);
     background-size: cover;
