@@ -38,17 +38,17 @@ $(document).ready(function() {                                                  
             movieTitleH1.text(title);                                                                                                                           // Adding the title from API data.
             movieDiv.append(movieTitleH1);                                                                                                                      // Appending the H1 element to the movie div.
 
-            var actorsH4 = $("<h4>");                                                                                                                           // Creating a H4 element for the actors.
-            actorsH4.text(actors);                                                                                                                              // Adding the actors from API data.
-            movieDiv.append(actorsH4);                                                                                                                          // Appending the H4 element to the movie div.
+            var actorsP = $("<p>");                                                                                                                             // Creating a P element for the actors.
+            actorsP.text(actors);                                                                                                                               // Adding the actors from API data.
+            $("#actors").append(actorsP);                                                                                                                       // Appending the P element to the actors div.
 
-            var genreH4 = $("<h4>");                                                                                                                            // Creating a H4 element for the genres.
-            genreH4.text(genres);                                                                                                                               // Adding the genres from API data.
-            movieDiv.append(genreH4);                                                                                                                           // Appending the H4 element to the movie div.
+            var genreP = $("<p>");                                                                                                                              // Creating a P element for the genres.
+            genreP.text(genres);                                                                                                                                // Adding the genres from API data.
+            $("#genre").append(genreP);                                                                                                                         // Appending the P element to the genre div.
 
             var plotP = $("<p>");                                                                                                                               // Creating a P element for the plot.
             plotP.text(plot);                                                                                                                                   // Adding the plot from API data.
-            movieDiv.append(plotP);                                                                                                                             // Appending the P element to the movie div.
+            $("#plot").append(plotP);                                                                                                                           // Appending the P element to the plot div.
 
             var posterImg = $(`<img src="${posterSource}">`);                                                                                                   // Creating an Img element for the plot with a src link of the poster.
             movieDiv.append(posterImg);                                                                                                                         // Appending the Img element to the movie div.
