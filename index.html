@@ -23,19 +23,23 @@
 
 <body class="container bgBody">
     <!--This div (#start-screen) will be displayed when the game starts -->
-    <div id="start-screen" class="container bg-danger p-3">
+    <div id="start-screen" class="container bg-danger p-5">
         <div class="container">
             <div class="row">
-                <div class="col customAside">
+                <!-- Empty column for spacing on smaller screens -->
+                <div class="col-lg-3 d-none d-lg-block">
                 </div>
-                <div class="col-8 text-center">
+                <div class="col-12 col-lg-6 text-center">
                     <h1 id="welcomeMessage">WELCOME</h1>
                     <h3>TO THE MOVIE GUESSER GAME</h3>
-                    <div class="text-center container mt-4">
-                        <button id="startBtn" type="button" class="btn btn-info">PLAY GAME</button>
+                    <div id="clapboard" class="text-center container mt-4">
+                        <img id="openClapboard" src="./assets/images/open.png" alt="open clapboard" class="img-fluid">
+                        <img id="closeClapboard"src="./assets/images/close.png" alt="close clapboard" class="hover-image">
+                        <button id="startBtn" type="button" class="btn btn-secondary">PLAY GAME</button>
                     </div>
                 </div>
-                <div class="col customAside">
+                <!-- Empty column for spacing on smaller screens -->
+                <div class="col-lg-3 d-none d-lg-block">
                 </div>
             </div>
         </div>
@@ -115,15 +119,16 @@
                 <div class="col-12 col-md-8 text-center">
                     <div class="card mx-auto" style="max-width: 22rem;">
                         <!--GIPHY will go here-->
-                        <img id="giphyImg" src="" class="card-img-top img-fluid" alt="Giphy Img from API">
+                        <img id="giphyImg" src=".//assets/images/happyGif.jpg" class="card-img-top img-fluid" alt="Giphy Img from API">
                         <div class="card-body">
                             <!-- Heading indicating whether the player performed well or not -->
-                            <h5 id="feedbackMessage" class="card-title">Well Done/Sorry</h5>
+                            <h5 id="happyFeedback" class="card-title">🎉 Well Done !!! 🎉</h5>
+                            <h5 id="sadFeedback" class="card-title">😱Wrong Answer😱</h5>
                             <div class="text-center container mt-4">
                                 <!-- Button to view the poster related to the question -->
-                                <button id="posterBtn" type="button" class="btn btn-info mr-2 mb-2">SEE POSTER</button>
+                                <button id="posterBtn" type="button" class="btn btn-danger mr-2 mb-2">SEE POSTER</button>
                                 <!-- Button to proceed to the next question -->
-                                <button id="nextQBtn" type="button" class="btn btn-info">NEXT QUESTION</button>
+                                <button id="nextQBtn" type="button" class="btn btn-danger mb-2">NEXT QUESTION</button>
                             </div>
                         </div>
                     </div>
@@ -134,19 +139,23 @@
         </div>
     </div>
     <!-- This div (#end-screen)will display the end game view -->
-    <div id="end-screen" class="container bg-secondary p-3">
+    <div id="end-screen" class="container bg-secondary p-3 d-flex align-items-center">
         <div class="container">
             <div class="row">
-                <div class="col customAside">
+                <!-- Empty column for spacing on smaller screens -->
+                <div class="col-lg-3 d-none d-lg-block">
                 </div>
-                <div class="col-8 text-center">
+                <div class="col-12 col-lg-6 text-center mt-5 align-middle">
+                    <h1 class="display-1 font-weight-bold">The End</h1>
+                    <p class="lead display-4">Your final score is</p>
                     <div class="container text-center">
-                        <input type="text" class="form-control mb-3" placeholder="Type something...">
+                        <input type="text" class="form-control mb-3" placeholder="Type Your Name...">
                         <!--Button to submit user's name with his score and save in Local Storage-->
-                        <button id="submitUserNameBtn" type="submit" class="btn btn-primary">SUBMIT</button>
+                        <button id="submitUserNameBtn" type="submit" class="btn">SUBMIT</button>
                     </div>
                 </div>
-                <div class="col customAside">
+                <!-- Empty column for spacing on smaller screens -->
+                <div class="col-lg-3 d-none d-lg-block">
                 </div>
             </div>
         </div>
