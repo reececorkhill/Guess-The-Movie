@@ -121,9 +121,13 @@
     <div id="feedback" class="container bg-primary p-3">
         <div class="container">
             <div class="row">
-                <div class="col customAside">
+                <!-- Left column for the first image -->
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="image-container">
+                        <img src="./assets/images/wrong.jpg" class="flippable-image" alt="Flipped Image">
+                    </div>
                 </div>
-                <div class="col-12 col-md-8 text-center">
+                <div class="col-12 col-md-6 text-center">
                     <div class="card mx-auto" style="max-width: 22rem;">
                         <!--GIPHY will go here-->
                         <img id="giphyImg" src=".//assets/images/happyGif.jpg" class="card-img-top img-fluid"
@@ -142,13 +146,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col customAside">
+                    <!-- Right column for the second image -->
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="image-container">
+                        <img src="./assets/images/rightAnswer.jpg" class="flippable-image" alt="Flipped Image">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- This div (#end-screen)will display the end game view -->
-    <div id="end-screen" class="container bg-secondary p-3 d-flex align-items-center">
+    <div id="end-screen" class="container bg-secondary p-3">
         <div class="container">
             <div class="row">
                 <!-- Empty column for spacing on smaller screens -->

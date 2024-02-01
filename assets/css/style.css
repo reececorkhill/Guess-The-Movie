@@ -105,6 +105,8 @@
     background-position: center;
     color: white;
     height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 #end-screen h1{
@@ -121,3 +123,26 @@
     background-color: var(--very-dark-color);
     color: var(--contrast-red);
 }
+
+.image-container {
+    position: relative;
+    width: 200px; /* Adjust the width as needed */
+    height: 400px; /* Adjust the height as needed */
+    overflow: hidden;
+  }
+
+  .flippable-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: flipAnimation 4s infinite; /* Adjust the duration as needed */
+  }
+
+  @keyframes flipAnimation {
+    0%, 100% {
+      transform: scaleX(1);
+    }
+    50% {
+      transform: scaleX(-1);
+    }
+  }
