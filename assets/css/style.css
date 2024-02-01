@@ -5,13 +5,108 @@
     --light-color: #E9CB80;
     --bright-color: #DDA515;
     --base-color: #625E5Dff;
-    --contrast-red: #751911ff;
+    --contrast-red: #fd0202;
     --contrast-blue: rgb(63, 198, 231);
+}
+
+.bgBody{
+    background-image: url(..//images/endGameBG.jpg);
 }
 
 .customAside{
     background-image: url(..//images/sideImg.jpg);
 }
-.bgBody{
+
+#start-screen{
+    background-image: url(..//images/startGame.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+}
+
+#welcomeMessage {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--bright-color);
+}
+
+#start-screen h3{
+    background: linear-gradient(to left, var(--bright-color), var(--contrast-red));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#clapboard {
+    position: relative;
+    width: 200px; /* Set the width of the container */
+    height: 200px; /* Set the height of the container */
+}
+
+#openClapboard,
+#closeClapboard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Make sure the images take up the full container */
+    height: auto;
+}
+
+#closeClapboard {
+    display: none; /* Initially hide the close clapboard image */
+}
+
+#clapboard:hover #openClapboard {
+    display: none;
+}
+
+#clapboard:hover #closeClapboard {
+    display: block;
+}
+
+#startBtn{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+}
+
+
+#feedback{
     background-image: url(..//images/endGameBG.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#feedback .customAside{
+    background-image: url(..//images/aside.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#end-screen{
+    background-image: url(..//images/endGameBG.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+}
+
+#end-screen h1{
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+}
+
+#end-screen p{
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+}
+
+#submitUserNameBtn{
+    background-color: var(--very-dark-color);
+    color: var(--contrast-red);
 }
