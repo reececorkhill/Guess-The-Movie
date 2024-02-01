@@ -16,10 +16,6 @@ $("#startBtn").on('click', function() {
 
     // Hide start screen and show game screen
     $("#start-screen").addClass("hide");
-    $("#start-screen").css({"background-image":"url()"})
-    $("#start-image").addClass("hide")
-    $("#welcome").addClass("hide")
-    
     $("#game").removeClass("hide");
     $("#heading").removeClass("hide");
 
