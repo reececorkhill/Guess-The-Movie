@@ -8,6 +8,9 @@
     --contrast-red: #fd0202;
     --contrast-blue: rgb(63, 198, 231);
 }
+.hide{
+    display: none;
+}
 
 .bgBody{
     background-image: url(..//images/endGameBG.jpg);
@@ -85,7 +88,7 @@
 
 
 #feedback{
-    background-image: url(..//images/endGameBG.jpg);
+    background-image: url(../images/movie.png);
     background-size: cover;
     background-position: center;
 }
