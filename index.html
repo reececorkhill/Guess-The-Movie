@@ -45,6 +45,7 @@
         </div>
     </div>
 
+
     <!-- This div (#game-screen) will display the game with questions -->
     <div id="game-screen" class="container bg-success p-3">
         <div class="container">
@@ -58,7 +59,11 @@
                     <!-- col-12 ensures full width on smaller screens -->
 
                     <div id="logo" class="col-12 col-md-4 text-center mb-3" >
-                        <img src="../Guess-The-Movie/assets/images/Logo1.png" alt="logo">
+                        <img src="./assets/images/Logo1.png" alt="logo">
+
+                    <div id="logo" class="col-12 col-md-4 text-center mb-3">
+                        LOGO
+
                     </div>
                     <!-- col-12 ensures full width on smaller screens -->
                     <div id="question" class="col-12 col-md-4 text-center mb-3">
@@ -82,7 +87,7 @@
                             <h3>Cast:</h3>
                         </div>
                         <!--4 buttons with available answers(movies title)-->
-                        <div class="list-group">
+                        <div id="actorsOptions" class="list-group">
                             <button id="option1" type="button" class="list-group-item list-group-item-action">Option 1</button>
                             <button id="option2" type="button" class="list-group-item list-group-item-action">Option 2</button>
                             <button id="option3" type="button" class="list-group-item list-group-item-action">Option 3</button>
@@ -92,17 +97,32 @@
                         <div class="text-center container mt-4 mb-2">
                             <button id="clue2" type="button" class="btn btn-info">GIVE ME ANOTHER CLUE</button>
                         </div>
+                        
                         <!-- This div will display the second clue (#genre)-->
                         <div id="genre" class="container bg-danger">
                             <h3>Genre:</h3>
                         </div>
+                        <!--4 buttons with available answers(movies title)-->
+                        <div id="genreOptions" class="list-group">
+                            <button id="option1" type="button" class="list-group-item list-group-item-action">Option 1</button>
+                            <button id="option2" type="button" class="list-group-item list-group-item-action">Option 2</button>
+                            <button id="option3" type="button" class="list-group-item list-group-item-action">Option 3</button>
+                            <button id="option4" type="button" class="list-group-item list-group-item-action">Option 4</button>
+                        </div>
                         <!--Button to display the (#plot) div-->
                         <div class="text-center container mt-4 mb-2">
-                            <button id="cleu3" type="button" class="btn btn-info">Single Button</button>
+                            <button id="clue3" type="button" class="btn btn-info">ONE MORE CLUE</button>
                         </div>
                         <!-- This div will display the third clue (#plot) -->
                         <div id="plot" class="container bg-warning">
                             <h3>Plot:</h3>
+                        </div>
+                        <!--4 buttons with available answers(movies title)-->
+                        <div id="plotOptions" class="list-group">
+                            <button id="option1" type="button" class="list-group-item list-group-item-action">Option 1</button>
+                            <button id="option2" type="button" class="list-group-item list-group-item-action">Option 2</button>
+                            <button id="option3" type="button" class="list-group-item list-group-item-action">Option 3</button>
+                            <button id="option4" type="button" class="list-group-item list-group-item-action">Option 4</button>
                         </div>
                     </div>
                 </div>
@@ -112,6 +132,10 @@
         </div>
     </div>
     <!-- This div (#feedback) will display feedback message, GIPHY with buttons to proceed -->
+ 
+    <!-- This div (#end-screen)will display the end game view -->
+   
+    </div>
     <div id="feedback" class="container bg-primary p-3">
         <div class="container">
             <div class="row">
@@ -139,9 +163,8 @@
             </div>
         </div>
     </div>
-    <!-- This div (#end-screen)will display the end game view -->
-    <div id="end-screen" class="container bg-secondary p-3 d-flex align-items-center">
-        <div class="container">
+    <div id="end-screen" class=" container bg-secondary p-3 flex">
+        <div class="container d-flex align-items-center">
             <div class="row">
                 <!-- Empty column for spacing on smaller screens -->
                 <div class="col-lg-3 d-none d-lg-block">
@@ -160,7 +183,6 @@
                 </div>
             </div>
         </div>
-    </div>
 
     <!-- Bootstrap JS and Popper.js (required for Bootstrap) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -169,8 +191,8 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!-- Custom JS file -->
-    <!-- <script src="./assets/js/questionapi.js"></script> -->
-    <!-- <script src="./assets/js/quiz.js"></script> -->
+    <script src="./assets/js/questionapi.js"></script>
+    <script src="./assets/js/quiz.js"></script>
     <script src="./assets/js/scores.js"></script>
     <!-- Day.js -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.6"></script>
