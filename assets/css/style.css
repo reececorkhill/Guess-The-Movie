@@ -1,91 +1,17 @@
-.hide{
-    display: none;
+:root{
+    --very-dark-color: #000000ff;
+    --dark-color: #3D0603ff;
+    --main-color: #5E4F3Fff;
+    --light-color: #E9CB80;
+    --bright-color: #DDA515;
+    --base-color: #625E5Dff;
+    --contrast-red: #751911ff;
+    --contrast-blue: rgb(63, 198, 231);
 }
 
-.display{
-    display:block;
+.customAside{
+    background-image: url(..//images/sideImg.jpg);
 }
-
-#start-screen {
-    background-image: url('../images/statGameBG.jpg'); /* Replace with the path to your background image */
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    height: 100vh; /* Set height to 100% of the viewport height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .start-image {
-    position: relative;
-    display: inline-block;
+.bgBody{
+    background-image: url(..//images/endGameBG.jpg);
 }
-
-#welcome{
-    font-size: 5em;
-    font-weight: bold;
-    color: #333;
-    background: linear-gradient(to left, #f3f2f2, #050505);
-    -webkit-background-clip: text;
-    color: transparent;
-    padding: 5px;
-    margin-bottom: 5px;
-    -webkit-text-stroke: 2px #fc0404;
-}
-
-.btn {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    background-color: transparent;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 2rem;
-}
-
-.start-image img {
-    max-width: 100%;
-    height: auto;
-}
-
-.start-image .hover-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.start-image:hover .hover-image {
-    opacity: 1;
-}
-
-.start-image:not(:hover) .hover-image {
-    display: none;
-}
-
-.start-image:hover img:not(.hover-image) {
-    opacity: 0;
-}
-
-.start-image:not(:hover) img:not(.hover-image) {
-    opacity: 1;
-}
-
-.hide {
-    display: none;
-  }
-
-  .timer {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
-  
