@@ -118,3 +118,9 @@
     background-color: var(--very-dark-color);
     color: var(--contrast-red);
 }
+
+#timer {
+
+    text-align: right;
+    
+}
