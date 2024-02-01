@@ -1,5 +1,4 @@
 $(document).ready(function() {                                                                                          // Checking the document is ready.
-    clearScreen();                                                                                                      // Calling the clearScreen TEST FUNCTION.
 
     var listOfMovies = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]                                     // Example array for movie list...
     var testMovie = "Avatar";                                                                                           // Search Term Variable.
@@ -55,8 +54,4 @@ $(document).ready(function() {                                                  
         $("body").append(movieDiv);                                                                                     // Appending the movie div to the body.
         // Variables for Dynamic Elements - END
     });
-
-    function clearScreen () {                                                                                           // Test function to clear the current elements being displayed.
-        $(".wrapper").addClass("hide");
-    }    
 });
