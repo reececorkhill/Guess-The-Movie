@@ -1,3 +1,4 @@
+/* Define custom color variables using CSS custom properties */
 :root{
     --very-dark-color: #000000ff;
     --dark-color: #3D0603ff;
@@ -8,26 +9,25 @@
     --contrast-red: #fd0202;
     --contrast-blue: rgb(63, 198, 231);
 }
+
+/* Utility class to hide elements */
 .hide{
     display: none;
 }
 
+/* Background styles for the body */
 .bgBody{
     background-image: url(..//images/endGameBG.jpg);
 }
 
+/* Background styles for custom aside elements */
 .customAside{
     background-image: url(..//images/sideImg.jpg);
 }
+/*................................................*/
+/*START-SCREEN*/
 
-#game-screen {
-    background-image: url(../images/movie.png);
-}
-
-#question {
-    background-color: #DDA515;
-}
-
+/* Background styles for the start screen */
 #start-screen{
     background-image: url(..//images/startGame.jpg);
     background-size: cover;
@@ -35,24 +35,24 @@
     color: white;
     height: 100vh;
 }
-
+/* Styling for the welcome message */
 #welcomeMessage {
     color: transparent;
     -webkit-text-stroke: 2px var(--bright-color);
 }
-
+/* Styling for the gradient text effect */
 #start-screen h3{
     background: linear-gradient(to left, var(--bright-color), var(--contrast-red));
     -webkit-background-clip: text;
     color: transparent;
 }
-
+/* Styles for the clapboard container */
 #clapboard {
     position: relative;
     width: 200px; /* Set the width of the container */
     height: 200px; /* Set the height of the container */
 }
-
+/* Styles for the open and close clapboard images */
 #openClapboard,
 #closeClapboard {
     position: absolute;
@@ -62,19 +62,18 @@
     width: 100%; /* Make sure the images take up the full container */
     height: auto;
 }
-
+/* Initially hide the close clapboard image */
 #closeClapboard {
-    display: none; /* Initially hide the close clapboard image */
+    display: none; 
 }
-
+/* Show close clapboard on hover */
 #clapboard:hover #openClapboard {
     display: none;
 }
-
 #clapboard:hover #closeClapboard {
     display: block;
 }
-
+/* Styles for the start button */
 #startBtn{
     position: absolute;
     top: 80%;
@@ -86,19 +85,73 @@
     font-size: 1rem;
 }
 
+/*...................................................*/
+/*GAME-SCREEN*/
 
-#feedback{
+/* Background styles for the game screen */
+#game-screen {
     background-image: url(../images/movie.png);
+}
+#question {
+    background-color: #DDA515;
+}
+
+/*..................................................*/
+/*FEEDBACK DIV*/
+
+/* Background styles for the feedback element */
+#feedback{
+    background-image: url(../images/redCarpet.jpg);
     background-size: cover;
     background-position: center;
 }
-
-#feedback .customAside{
-    background-image: url(..//images/aside.jpg);
-    background-size: cover;
-    background-position: center;
+/* Styles for the image container aside(left and right) */
+.image-container {
+    position: relative;
+    width: 200px;
+    height: 400px;
+    overflow: hidden;
+}
+/* Styles for the flippable image with a horizontal flip animation */
+.flippable-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: flipAnimation 4s infinite;
+}
+/* Keyframes for the horizontal flip animation */
+@keyframes flipAnimation {
+    0%, 100% {
+    transform: scaleX(1);
+    }
+    50% {
+    transform: scaleX(-1);
+    }
+}
+/* Background styles for the custom card body */
+.customCardBody{
+    background: linear-gradient(to bottom, #f81a36, #87020b);
+}
+/* Button styles within the custom card body */
+.customCardBody button{
+    background: radial-gradient(circle, #ffd700, #b8860b);
+    color:#87020b;
+}
+/* Styles for the card with a gold border */
+.card-with-gold-border {
+    border: 5px solid;
+    border-image: radial-gradient(circle, #ffd700, #b8860b) 1;
+    border-image-slice: 50;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: #b8860b;
+    color: #b8860b;
 }
 
+/*...............................................*/
+/*END-SCREEN*/
+
+/* Styles for the end screen */
 #end-screen{
     background-image: url(..//images/endGameBG.jpg);
     background-size: cover;
@@ -108,41 +161,18 @@
     display: flex;
     align-items: center;
 }
-
+/* Styles for the heading in the end screen */
 #end-screen h1{
     font-family: 'Great Vibes', cursive;
     font-size: 5rem;
 }
-
+/* Styles for the paragraph in the end screen */
 #end-screen p{
     font-family: 'Great Vibes', cursive;
     font-size: 2rem;
 }
-
+/* Styles for the submit user name button */
 #submitUserNameBtn{
     background-color: var(--very-dark-color);
     color: var(--contrast-red);
 }
-
-.image-container {
-    position: relative;
-    width: 200px; /* Adjust the width as needed */
-    height: 400px; /* Adjust the height as needed */
-    overflow: hidden;
-  }
-
-  .flippable-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    animation: flipAnimation 4s infinite; /* Adjust the duration as needed */
-  }
-
-  @keyframes flipAnimation {
-    0%, 100% {
-      transform: scaleX(1);
-    }
-    50% {
-      transform: scaleX(-1);
-    }
-  }
