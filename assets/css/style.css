@@ -36,6 +36,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+    z-index: 1;
 }
 /* Styles for both left and right curtains */
 .left-curtain,
@@ -221,7 +222,7 @@
     background-position: center;
     color: white;
     height: 100vh;
-    display: flex;
+    /* display: flex; */
     align-items: center;
 }
 /* Styles for the heading in the end screen */
@@ -256,7 +257,7 @@
 
 #actors {
     justify-content: center;
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     align-items: center;
     border-radius: 10px;
@@ -267,7 +268,7 @@
 
 #genre {
     justify-content: center;
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     align-items: center;
     border-radius: 10px;
@@ -278,7 +279,7 @@
 
 #plot {
     justify-content: center;
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     align-items: center;
     border-radius: 10px;
