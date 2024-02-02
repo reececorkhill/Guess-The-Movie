@@ -1,10 +1,12 @@
 $(document).ready(function() {                                                                                                                                  // Checking the document is ready.
 
-    function movieFetch () {                                                                                                                                    // Defining a function to call the OMDB API.
+    var testMovie = "The Terminator";                                                                                                                           // Search Term Variable.
+    var giphyApiKey = "nZcsHdIXJYfHdyt5y85wKNj1pmrGVGBh";                                                                                                       // Giphy API Key.
+
+    function movieFetch (movie) {                                                                                                                               // Defining a function to call the OMDB API (With variable we pass in on call).
 
         var listOfMovies = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]                                                                         // Example array for movie list...
-        var testMovie = "The Terminator";                                                                                                                       // Search Term Variable.
-        var queryURL = "https://www.omdbapi.com/?t=" + testMovie + "&apikey=trilogy";                                                                           // Query URL with movie.
+        var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy";                                                                               // Query URL with movie.
 
         fetch(queryURL)
         .then(function (response) {
@@ -12,23 +14,12 @@ $(document).ready(function() {                                                  
         })
         .then(function (data) {
             
-            console.log(data);                                                                                                                                  // Console logging the data object from response.
-
             // Variables for Response Data - START
             var title = data.Title;                                                                                                                             // Extracting the Title from response.
-            console.log(title);                                                                                                                                 // Console logging the title.
-
             var actors = data.Actors;                                                                                                                           // Extracting the Actors from response.
-            console.log(actors);                                                                                                                                // Console logging the actors.
-        
             var genres = data.Genre;                                                                                                                            // Extracting the Genre from response.
-            console.log(genres);                                                                                                                                // Console logging the genres.
-
             var plot = data.Plot;                                                                                                                               // Extracting the Plot from response.
-            console.log(plot);                                                                                                                                  // Console logging the plot.
-
             var posterSource = data.Poster;                                                                                                                     // Extracting the Poster Source from response.
-            console.log(posterSource);                                                                                                                          // Console logging the poster source.
             // Variables for Response Data - END
             
             // Variables for Dynamic Elements - START
@@ -50,32 +41,24 @@ $(document).ready(function() {                                                  
             plotP.text(plot);                                                                                                                                   // Adding the plot from API data.
             $("#plot").append(plotP);                                                                                                                           // Appending the P element to the plot div.
 
-            var posterImg = $(`<img src="${posterSource}">`);                                                                                                   // Creating an Img element for the plot with a src link of the poster.
-            movieDiv.append(posterImg);                                                                                                                         // Appending the Img element to the movie div.
-
-            $("body").append(movieDiv);                                                                                                                         // Appending the movie div to the body.
+            $("#posterImg").attr("src", `${posterSource}`);                                                                                                     // Giving the poster image tag a src attribute of the poster source url.
             // Variables for Dynamic Elements - END
         });
     };
-    movieFetch();                                                                                                                                               // Calling the movieFetch function.
+    movieFetch(testMovie);                                                                                                                                      // Calling the movieFetch function.
 
-    function giphyFetch () {                                                                                                                                    // Defining a function to call the giphy API.
-        var testMovie = "The Terminator";                                                                                                                       // Search Term Variable.
-        var apiKey = "nZcsHdIXJYfHdyt5y85wKNj1pmrGVGBh";                                                                                                        // Giphy API Key.
-        var queryURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${testMovie}&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips`    // Giphy query url.
+    function giphyFetch (movie, key) {                                                                                                                          // Defining a function to call the giphy API (With variables we pass in on call).
+        
+        var queryURL = `https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${movie}&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips`           // Giphy query url.
 
         fetch(queryURL)
         .then(function (response) {
         return response.json();
         })
         .then(function (data) {
-            console.log(data);                                                                                                                                  // Console logging the data object from response.
             var gifImgURL = data.data[0].images.original.url;                                                                                                   // Extracting the gif source url from response.
-            var gifDiv = $("<div>");                                                                                                                            // Creating a div which will contain the gif image.
-            var gifImg = $(`<img src="${gifImgURL}">`);                                                                                                         // Creating an image element with the src of the image link.
-            gifDiv.append(gifImg);                                                                                                                              // Appending the gifImg element to the gifDiv.
-            $("body").append(gifDiv);                                                                                                                           // Appending the gifDiv element to the body.
+            $("#giphyImg").attr("src", `${gifImgURL}`);                                                                                                         // Giving the giphy image tag a src attribute of giphy's gif source url.
         });
     }
-    giphyFetch();                                                                                                                                               // Calling the giphyFetch function.
+    giphyFetch(testMovie, giphyApiKey);                                                                                                                         // Calling the giphyFetch function (Passing in testMovie and giphyApiKey).
 });
