@@ -1,7 +1,25 @@
-var secondsLeft = 60;
-var timeEl = $("#time");
+var secondsLeft = 60;  //timer length - can be changed
+var timeEl = $("#time"); //html for timer
 
-$("#startBtn").on('click', function() {
+//hiding all game elements until called
+$("#game-screen").addClass("hide");
+$("#feedback").addClass("hide");
+$("#end-screen").addClass("hide");
+
+$("#genre").addClass("hide");
+$("#genreOptions").addClass("hide");
+
+$("#plot").addClass("hide");
+$("#plotOptions").addClass("hide");
+
+$("#clue3").addClass("hide");
+
+
+
+
+//start button functionality
+$("#startBtn").on('click', function () {
+    //begin timer
     var timerInterval = setInterval(function () {
         secondsLeft--;
         timeEl.text(secondsLeft);
@@ -16,36 +34,82 @@ $("#startBtn").on('click', function() {
 
     // Hide start screen and show game screen
     $("#start-screen").addClass("hide");
-    $("#game").removeClass("hide");
-    $("#heading").removeClass("hide");
+    $("#game-screen").removeClass("hide");
 
     // Show the first clue
-    $("#firstclue").removeClass("hide");
+    $("#actors").removeClass("hide");
 
-    // Logic to handle user's answer (correct answer)
-    $("#option1").on('click', function() {
-        // Handle correct answer logic here
-        // For example, hide current clue and show feedback
-        $("#firstclue").addClass("hide");
-        $("#feedback").removeClass("hide");
-    });
 
-    // Logic to handle user's incorrect answer (incorrect answer)
-    // Will eventually just do an ELSE statement but just for now to see if it works...
-    $("#option2").on('click', function() {
-        // Handle incorrect answer logic here
-        // For example, hide current clue and show next clue
-        $("#firstclue").addClass("hide");
-        $("#secondClue").removeClass("hide");
-    });
-
-    // Add logic for other options and clues
-
-    // Logic to handle next button click
-    $("#next").on('click', function() {
-
-        // Need to add logic to show next question or end game
-    });
 });
+
+$("#clue2").on('click', function () {
+
+    //hide 1st clue
+    $("#actors").addClass("hide");
+    $("#actorsOptions").addClass("hide");
+    
+
+    //show 2nd clue
+    $("#clue2").addClass("hide");
+    $("#genre").removeClass("hide");
+    $("#genreOptions").removeClass("hide");
+    $("#clue3").removeClass("hide");
+
+
+});
+
+$("#clue3").on('click', function () {
+
+    //hide 1st clue
+    $("#genre").addClass("hide");
+    $("#genreOptions").addClass("hide");
+
+    
+
+    //show 2nd clue
+    $("#clue3").addClass("hide");
+    $("#plot").removeClass("hide");
+    $("#plotOptions").removeClass("hide");
+
+});
+
+// pretending option 4 is correct answer FOR NOW
+$("#sadFeedback").addClass("hide");
+$("#happyFeedback").addClass("hide");
+
+
+$("#plotOptions, #option4").on('click', function () {
+
+    //hide question
+    $("#plot").addClass("hide");
+    $("#plotOptions").addClass("hide");
+
+    
+
+    //show feedback
+    $("#feedback").removeClass("hide");
+    $("#happyFeedback").removeClass("hide");
+
+});
+
+$("#posterBtn").on('click', function () {
+
+    //hide gif
+    $("#giphyImg").attr("src","POSTER FROM API")
+    $("#giphyImg").attr("alt","POSTER FROM API")
+
+});
+
+$("#nextQBtn").on('click', function () {
+
+    //hide feedback
+    $("#feedback").addClass("hide");
+
+    //start new question from beginning
+    $("#game-screen").removeClass("hide");
+
+});
+
+
 
 // Add logic for displaying the end screen, submitting scores, etc.
