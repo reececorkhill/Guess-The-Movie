@@ -24,6 +24,10 @@
 <body class="container bgBody">
     <!--This div (#start-screen) will be displayed when the game starts -->
     <div id="start-screen" class="container bg-danger p-5">
+        <div class="curtains">
+            <div class="left-curtain"></div>
+            <div class="right-curtain"></div>
+        </div>
         <div class="container">
             <div class="row">
                 <!-- Empty column for spacing on smaller screens -->
@@ -36,7 +40,7 @@
                         <img id="openClapboard" src="./assets/images/open.png" alt="open clapboard" class="img-fluid">
                         <img id="closeClapboard" src="./assets/images/close.png" alt="close clapboard"
                             class="hover-image">
-                        <button id="startBtn" type="button" class="btn btn-secondary">PLAY GAME</button>
+                        <button id="startBtn" type="button" class="btn btn-secondary">PLAY</button>
                     </div>
                 </div>
                 <!-- Empty column for spacing on smaller screens -->
@@ -117,17 +121,21 @@
         </div>
     </div>
     <!-- This div (#feedback) will display feedback message, GIPHY with buttons to proceed -->
-    <div id="feedback" class="container bg-primary p-3">
+    <div id="feedback" class="container bg-danger p-3">
         <div class="container">
             <div class="row">
-                <div class="col customAside">
+                <!-- Left column for the first image -->
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="image-container">
+                        <img src="./assets/images/oscarAward.png" class="flippable-image" alt="Flipped Image">
+                    </div>
                 </div>
-                <div class="col-12 col-md-8 text-center">
-                    <div class="card mx-auto" style="max-width: 22rem;">
+                <div class="col-12 col-md-6 text-center">
+                    <div class="card mx-auto card-with-gold-border" style="max-width: 22rem;">
                         <!--GIPHY will go here-->
                         <img id="giphyImg" src=".//assets/images/happyGif.jpg" class="card-img-top img-fluid"
                             alt="Giphy Img from API">
-                        <div class="card-body">
+                        <div class="card-body customCardBody">
                             <!-- Heading indicating whether the player performed well or not -->
                             <h5 id="happyFeedback" class="card-title">🎉 Well Done !!! 🎉</h5>
                             <h5 id="sadFeedback" class="card-title">😱Wrong Answer😱</h5>
@@ -141,13 +149,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col customAside">
+                    <!-- Right column for the second image -->
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="image-container">
+                        <img src="./assets/images/raspberryAward.png" class="flippable-image" alt="Flipped Image">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- This div (#end-screen)will display the end game view -->
-    <div id="end-screen" class="container bg-secondary p-3 d-flex align-items-center">
+    <div id="end-screen" class="container bg-secondary p-3">
         <div class="container">
             <div class="row">
                 <!-- Empty column for spacing on smaller screens -->
