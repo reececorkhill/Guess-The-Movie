@@ -74,17 +74,27 @@
     display: block;
 }
 /* Styles for the start button */
-#startBtn{
+#startBtn {
     position: absolute;
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    background-color: white;
-    color: black;
-    font-size: 1rem;
+    background-color: transparent;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--light-color);
+    font-size: 4rem;
+    cursor: pointer;
+    padding: 10px 20px; /* Padding for the clickable area */
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
 }
 
+#startBtn:hover {
+    background: linear-gradient(to left, var(--bright-color), var(--contrast-red));
+    -webkit-background-clip: text;
+    color: transparent;
+}
 /*...................................................*/
 /*GAME-SCREEN*/
 
