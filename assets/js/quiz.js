@@ -36,7 +36,6 @@ $("#startBtn").on('click', function () {
     $("#start-screen").addClass("hide");
     $("#game-screen").removeClass("hide");
 
-
     // Show the first clue
     $("#actors").removeClass("hide");
 
