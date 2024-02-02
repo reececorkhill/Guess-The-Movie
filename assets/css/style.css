@@ -24,6 +24,59 @@
 .customAside{
     background-image: url(..//images/sideImg.jpg);
 }
+/*...............................................*/
+/*CURTAINS*/
+
+/* Styles for the curtains container */
+.curtains {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+/* Styles for both left and right curtains */
+.left-curtain,
+.right-curtain {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: url('../images/endGameBG.jpg');
+    background-size: cover;
+    background-position: center;
+}
+/* Styles specifically for the left curtain */
+.left-curtain {
+    left: 0;
+    animation: left-curtain-animation 5s forwards;
+}
+/* Styles specifically for the right curtain */
+.right-curtain {
+    right: 0;
+    animation: right-curtain-animation 5s forwards;
+}
+/* Keyframes animation for the left curtain */
+@keyframes left-curtain-animation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+/* Keyframes animation for the right curtain */
+@keyframes right-curtain-animation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(50%);
+    }
+}
+
 /*................................................*/
 /*START-SCREEN*/
 
