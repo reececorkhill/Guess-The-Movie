@@ -235,7 +235,17 @@
     font-size: 2rem;
 }
 /* Styles for the submit user name button */
-#submitUserNameBtn{
-    background-color: var(--very-dark-color);
-    color: var(--contrast-red);
+#submitUserNameBtn {
+    background-color: black;
+    color: white;
+    -webkit-text-stroke: 0px;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px 20px; /* Padding for the clickable area */
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+#submitUserNameBtn:hover {
+    background: radial-gradient(circle, var(--very-dark-color), var(--dark-color));
+    color: rgba(255, 255, 255, 0.8);
 }
