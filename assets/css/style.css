@@ -249,3 +249,40 @@
     background: radial-gradient(circle, var(--very-dark-color), var(--dark-color));
     color: rgba(255, 255, 255, 0.8);
 }
+
+#timer {
+    text-align: right; 
+}
+
+#actors {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
+    background-color: #ffcc00;
+}
+
+#genre {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
+    background-color: #ffcc00;
+}
+
+#plot {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
+    background-color: #ffcc00;
+}

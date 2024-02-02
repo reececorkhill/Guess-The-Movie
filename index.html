@@ -69,11 +69,17 @@
                     <!-- col-12 ensures full width on smaller screens -->
                     <div id="question" class="col-12 col-md-4 text-center mb-3">
                         <!-- h4 class for smaller font size on smaller screens -->
-                        <h2 class="h4">GUESS THE MOVIE</h2>
+                    <!---- <h2 class="h4">GUESS THE MOVIE</h2> -->
+                    <img id="Logo" src="../Guess-The-Movie/assets/images/guessTheMovie.png" alt="Guess-The-Movie" class="img-fluid" >
                     </div>
                     <!-- col-12 ensures full width on smaller screens -->
                     <div id="timer" class="col-12 col-md-4 text-center">
-                        <div class="timer">Time: <span id="time">0</span></div>
+                        <div class="card border-dark mb-3" style="max-width: 18rem;">
+                            <div class="card-header">TIME LEFT</div>
+                            <div class="card-body text-dark">
+                              <h5 class="card-title">Timer Function goes here</h5>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -84,7 +90,7 @@
                 <div class="col-8 text-center">
                     <div class="container mt-4">
                         <!-- This div will display the first clue -->
-                        <div id="actors" class="container bg-danger">
+                        <div id="actors" class="container">
                             <h3>Cast:</h3>
                         </div>
                         <!--4 buttons with available answers(movies title)-->
@@ -99,9 +105,9 @@
                         <div class="text-center container mt-4 mb-2">
                             <button id="clue2" type="button" class="btn btn-info">GIVE ME ANOTHER CLUE</button>
                         </div>
-                        
+                        <br> <!-- This will be replaced by padding etc -->
                         <!-- This div will display the second clue (#genre)-->
-                        <div id="genre" class="container bg-danger">
+                        <div id="genre" class="container">
                             <h3>Genre:</h3>
                         </div>
                         <!--4 buttons with available answers(movies title)-->
@@ -115,8 +121,9 @@
                         <div class="text-center container mt-4 mb-2">
                             <button id="clue3" type="button" class="btn btn-info">ONE MORE CLUE</button>
                         </div>
+                        <br>
                         <!-- This div will display the third clue (#plot) -->
-                        <div id="plot" class="container bg-warning">
+                        <div id="plot" class="container">
                             <h3>Plot:</h3>
                         </div>
                         <!--4 buttons with available answers(movies title)-->
