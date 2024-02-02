@@ -24,6 +24,10 @@
 <body class="container bgBody">
     <!--This div (#start-screen) will be displayed when the game starts -->
     <div id="start-screen" class="container bg-danger p-5">
+        <div class="curtains">
+            <div class="left-curtain"></div>
+            <div class="right-curtain"></div>
+        </div>
         <div class="container">
             <div class="row">
                 <!-- Empty column for spacing on smaller screens -->
@@ -34,8 +38,9 @@
                     <h3>TO THE MOVIE GUESSER GAME</h3>
                     <div id="clapboard" class="text-center container mt-4">
                         <img id="openClapboard" src="./assets/images/open.png" alt="open clapboard" class="img-fluid">
-                        <img id="closeClapboard"src="./assets/images/close.png" alt="close clapboard" class="hover-image">
-                        <button id="startBtn" type="button" class="btn btn-secondary">PLAY GAME</button>
+                        <img id="closeClapboard" src="./assets/images/close.png" alt="close clapboard"
+                            class="hover-image">
+                        <button id="startBtn" type="button" class="btn btn-secondary">PLAY</button>
                     </div>
                 </div>
                 <!-- Empty column for spacing on smaller screens -->
@@ -45,20 +50,21 @@
         </div>
     </div>
 
+
     <!-- This div (#game-screen) will display the game with questions -->
     <div id="game-screen" class="container bg-success p-3">
         <div class="container">
             <!-- Progress bar indicating the player's progress in the game -->
             <div class="progress mb-4">
-                <div id="customProgressBar" class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                <div id="customProgressBar" class="progress-bar" role="progressbar" style="width: 25%;"
+                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
             </div>
             <!--Top panel with logo, question, and timer-->
             <div class="container">
                 <div class="row">
                     <!-- col-12 ensures full width on smaller screens -->
-
-                    <div id="logo" class="col-12 col-md-4 text-center mb-3" >
-                        <img src="../Guess-The-Movie/assets/images/Logo1.png" alt="logo">
+                    <div id="logo" class="col-12 col-md-4 text-center mb-3">
+                        <img src="./assets/images/Logo1.png" alt="logo">
                     </div>
                     <!-- col-12 ensures full width on smaller screens -->
                     <div id="question" class="col-12 col-md-4 text-center mb-3">
@@ -71,8 +77,7 @@
                         <div class="card border-dark mb-3" style="max-width: 18rem;">
                             <div class="card-header">TIME LEFT</div>
                             <div class="card-body text-dark">
-                            <h5 class="card-title">Timer Function goes here</h5>
-                            
+                              <h5 class="card-title">Timer Function goes here</h5>
                             </div>
                         </div>
                     </div>
@@ -89,7 +94,8 @@
                             <h3>Cast:</h3>
                         </div>
                         <!--4 buttons with available answers(movies title)-->
-                        <div class="list-group">
+
+                        <div id="actorsOptions" class="list-group">
                             <button id="option1" type="button" class="list-group-item list-group-item-action">Option 1</button>
                             <button id="option2" type="button" class="list-group-item list-group-item-action">Option 2</button>
                             <button id="option3" type="button" class="list-group-item list-group-item-action">Option 3</button>
@@ -99,19 +105,33 @@
                         <div class="text-center container mt-4 mb-2">
                             <button id="clue2" type="button" class="btn btn-info">GIVE ME ANOTHER CLUE</button>
                         </div>
-                        <br>
+                        <br> <!-- This will be replaced by padding etc -->
                         <!-- This div will display the second clue (#genre)-->
                         <div id="genre" class="container">
                             <h3>Genre:</h3>
                         </div>
+                        <!--4 buttons with available answers(movies title)-->
+                        <div id="genreOptions" class="list-group">
+                            <button id="option1" type="button" class="list-group-item list-group-item-action">Option 1</button>
+                            <button id="option2" type="button" class="list-group-item list-group-item-action">Option 2</button>
+                            <button id="option3" type="button" class="list-group-item list-group-item-action">Option 3</button>
+                            <button id="option4" type="button" class="list-group-item list-group-item-action">Option 4</button>
+                        </div>
                         <!--Button to display the (#plot) div-->
                         <div class="text-center container mt-4 mb-2">
-                            <button id="cleu3" type="button" class="btn btn-info">ANOTHER HINT?</button>
+                            <button id="clue3" type="button" class="btn btn-info">ONE MORE CLUE</button>
                         </div>
                         <br>
                         <!-- This div will display the third clue (#plot) -->
                         <div id="plot" class="container">
                             <h3>Plot:</h3>
+                        </div>
+                        <!--4 buttons with available answers(movies title)-->
+                        <div id="plotOptions" class="list-group">
+                            <button id="option1" type="button" class="list-group-item list-group-item-action">Option 1</button>
+                            <button id="option2" type="button" class="list-group-item list-group-item-action">Option 2</button>
+                            <button id="option3" type="button" class="list-group-item list-group-item-action">Option 3</button>
+                            <button id="option4" type="button" class="list-group-item list-group-item-action">Option 4</button>
                         </div>
                     </div>
                 </div>
@@ -121,35 +141,45 @@
         </div>
     </div>
     <!-- This div (#feedback) will display feedback message, GIPHY with buttons to proceed -->
-    <div id="feedback" class="container bg-primary p-3">
+    <div id="feedback" class="container bg-danger p-3">
         <div class="container">
             <div class="row">
-                <div class="col customAside">
+                <!-- Left column for the first image -->
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="image-container">
+                        <img src="./assets/images/oscarAward.png" class="flippable-image" alt="Flipped Image">
+                    </div>
                 </div>
-                <div class="col-12 col-md-8 text-center">
-                    <div class="card mx-auto" style="max-width: 22rem;">
+                <div class="col-12 col-md-6 text-center">
+                    <div class="card mx-auto card-with-gold-border" style="max-width: 22rem;">
                         <!--GIPHY will go here-->
-                        <img id="giphyImg" src=".//assets/images/happyGif.jpg" class="card-img-top img-fluid" alt="Giphy Img from API">
-                        <div class="card-body">
+                        <img id="giphyImg" src=".//assets/images/happyGif.jpg" class="card-img-top img-fluid"
+                            alt="Giphy Img from API">
+                        <div class="card-body customCardBody">
                             <!-- Heading indicating whether the player performed well or not -->
                             <h5 id="happyFeedback" class="card-title">🎉 Well Done !!! 🎉</h5>
                             <h5 id="sadFeedback" class="card-title">😱Wrong Answer😱</h5>
                             <div class="text-center container mt-4">
                                 <!-- Button to view the poster related to the question -->
-                                <button id="posterBtn" type="button" class="btn btn-danger mr-2 mb-2">SEE POSTER</button>
+                                <button id="posterBtn" type="button" class="btn btn-danger mr-2 mb-2">SEE
+                                    POSTER</button>
                                 <!-- Button to proceed to the next question -->
                                 <button id="nextQBtn" type="button" class="btn btn-danger mb-2">NEXT QUESTION</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col customAside">
+                    <!-- Right column for the second image -->
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="image-container">
+                        <img src="./assets/images/raspberryAward.png" class="flippable-image" alt="Flipped Image">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- This div (#end-screen)will display the end game view -->
-    <div id="end-screen" class="container bg-secondary p-3 d-flex align-items-center">
+    <div id="end-screen" class="container bg-secondary p-3">
         <div class="container">
             <div class="row">
                 <!-- Empty column for spacing on smaller screens -->
@@ -178,8 +208,8 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!-- Custom JS file -->
-    <script src="./assets/js/questionapi.js"></script> 
-    <script src="./assets/js/quiz.js"></script> 
+    <script src="./assets/js/questionapi.js"></script>
+    <script src="./assets/js/quiz.js"></script>
     <script src="./assets/js/scores.js"></script>
     <!-- Day.js -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.6"></script>
