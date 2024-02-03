@@ -101,6 +101,9 @@ $(document).ready(function () {
 
     $("#answerOptions, #option4").on('click', function () {
 
+        // Hiding the poster image so only the movie gif displays when answer is clicked.
+        $("#posterImg").addClass("hide");
+
         // If correct answer clicked, hiding the clue buttons.
         $("#clue1").addClass("hide");
         $("#clue2").addClass("hide");
