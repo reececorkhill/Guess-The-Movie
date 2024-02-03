@@ -194,6 +194,7 @@
 #clue1, #clue2{
     background: radial-gradient(circle, #ffd700, #b8860b);
     color:#87020b;
+    margin-bottom: 15px;
 }
 #game-screen {
     background: radial-gradient(circle, var(--contrast-red), var(--very-dark-color));
