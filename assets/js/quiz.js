@@ -1,6 +1,11 @@
 $(document).ready(function() {
 
+    $("#genre").addClass("hide");
+    // $("#genreOptions").addClass("hide");
 
+    $("#plot").addClass("hide");
+    // $("#plotOptions").addClass("hide");
+  
     var secondsLeft = 60;  //timer length - can be changed
     var timeEl = $("#time"); //html for timer
 
@@ -30,8 +35,9 @@ $(document).ready(function() {
             if (secondsLeft <= 0) {
                 // Clear when time runs out
                 clearInterval(timerInterval);
-
-                // Display end screen here maybe gif beforehand?
+            // Show the first clue
+            // $("#actors").removeClass("hide");
+            // Display end screen here maybe gif beforehand?
             }
         }, 1000);
 
@@ -42,7 +48,16 @@ $(document).ready(function() {
         // Show the first clue
         $("#actors").removeClass("hide");
 
+        //hide 1st clue
+        // $("#actors").addClass("hide");
+        // $("#actorsOptions").addClass("hide");
 
+
+        //show 2nd clue
+        $("#clue2").addClass("hide");
+        $("#genre").removeClass("hide");
+        // $("#genreOptions").removeClass("hide");
+        $("#clue3").removeClass("hide");
     });
 
     $("#clue2").on('click', function () {
@@ -57,23 +72,20 @@ $(document).ready(function() {
         $("#genre").removeClass("hide");
         $("#genreOptions").removeClass("hide");
         $("#clue3").removeClass("hide");
-
-
+        //hide 1st clue
+        // $("#genre").addClass("hide");
+        // $("#genreOptions").addClass("hide");
     });
 
     $("#clue3").on('click', function () {
-
-        //hide 1st clue
-        $("#genre").addClass("hide");
-        $("#genreOptions").addClass("hide");
-
-        
-
         //show 2nd clue
         $("#clue3").addClass("hide");
         $("#plot").removeClass("hide");
-        $("#plotOptions").removeClass("hide");
-
+        // $("#plotOptions").removeClass("hide");
+        //hide 1st clue
+        $("#genre").addClass("hide");
+        $("#genreOptions").addClass("hide");
+        $("#answerOptions").removeClass("hide");
     });
 
     // pretending option 4 is correct answer FOR NOW
