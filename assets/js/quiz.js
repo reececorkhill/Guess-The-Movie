@@ -7,10 +7,10 @@ $("#feedback").addClass("hide");
 $("#end-screen").addClass("hide");
 
 $("#genre").addClass("hide");
-$("#genreOptions").addClass("hide");
+// $("#genreOptions").addClass("hide");
 
 $("#plot").addClass("hide");
-$("#plotOptions").addClass("hide");
+// $("#plotOptions").addClass("hide");
 
 $("#clue3").addClass("hide");
 
@@ -37,7 +37,7 @@ $("#startBtn").on('click', function () {
     $("#game-screen").removeClass("hide");
 
     // Show the first clue
-    $("#actors").removeClass("hide");
+    // $("#actors").removeClass("hide");
 
 
 });
@@ -45,14 +45,14 @@ $("#startBtn").on('click', function () {
 $("#clue2").on('click', function () {
 
     //hide 1st clue
-    $("#actors").addClass("hide");
-    $("#actorsOptions").addClass("hide");
+    // $("#actors").addClass("hide");
+    // $("#actorsOptions").addClass("hide");
     
 
     //show 2nd clue
     $("#clue2").addClass("hide");
     $("#genre").removeClass("hide");
-    $("#genreOptions").removeClass("hide");
+    // $("#genreOptions").removeClass("hide");
     $("#clue3").removeClass("hide");
 
 
@@ -61,15 +61,15 @@ $("#clue2").on('click', function () {
 $("#clue3").on('click', function () {
 
     //hide 1st clue
-    $("#genre").addClass("hide");
-    $("#genreOptions").addClass("hide");
+    // $("#genre").addClass("hide");
+    // $("#genreOptions").addClass("hide");
 
     
 
     //show 2nd clue
     $("#clue3").addClass("hide");
     $("#plot").removeClass("hide");
-    $("#plotOptions").removeClass("hide");
+    // $("#plotOptions").removeClass("hide");
 
 });
 
