@@ -118,13 +118,13 @@ $(document).ready(function () {
 
     });
 
-    $("#posterBtn").on('click', function () {
+    // $("#posterBtn").on('click', function () {
 
-        //hide gif
-        $("#giphyImg").attr("src", "POSTER FROM API")
-        $("#giphyImg").attr("alt", "POSTER FROM API")
+    //     //hide gif
+    //     $("#giphyImg").attr("src", "POSTER FROM API")
+    //     $("#giphyImg").attr("alt", "POSTER FROM API")
 
-    });
+    // });
 
 
     // Next Question button functionality
