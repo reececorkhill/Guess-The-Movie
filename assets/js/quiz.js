@@ -55,7 +55,7 @@ $(document).ready(function () {
     //start button functionality
     $("#startBtn").on('click', function () {
         //begin timer
-        // startTimer(); // --------------- UNCOMMENT THIS!!!! --------------- //
+        startTimer(); // Calling the startTimer function to start the timer.
 
         // Hide start screen and show game screen
         $("#start-screen").addClass("hide");
@@ -166,27 +166,14 @@ $(document).ready(function () {
     function NextQuestion() {
         //reset question page
         $("#actors").removeClass("hide");
-        $("#actorsOptions").removeClass("hide");
-        $("#clue2").removeClass("hide");
-        $("#genre").addClass("hide");
-        $("#genreOptions").addClass("hide");
-        $("#plot").addClass("hide");
-        $("#plotOptions").addClass("hide");
-        $("#clue3").addClass("hide");
+        $("#answerOptions").removeClass("hide");
+        $("#clue1").removeClass("hide");
         // we should update clues and options for each question -- new movie every time
-    }
-
-
-
+    };
 
     function showEndScreen() {
         $("#game-screen").addClass("hide");
         $("#feedback-screen").addClass("hide");
         $("#end-screen").removeClass("hide");
-    }
-
-
-
-
-
+    };
 }); 
