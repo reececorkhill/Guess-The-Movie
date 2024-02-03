@@ -1,11 +1,11 @@
 $(document).ready(function() {                                                                                                                                  // Checking the document is ready.
 
-    var testMovie = "The Terminator";                                                                                                                           // Search Term Variable.
+    var movieArray = ["Pulp Fiction", "The Terminator", "The Dark Knight Rises", "Saving Private Ryan", "Toy Story", "Zombieland", "The Gentlemen", "The Conjuring", "Black Hawk Down", "Avatar The Way of Water"];                                                                          
+    var movieSelector = movieArray[Math.floor(Math.random() * movieArray.length)];                                                                              // Getting random movie name from movieArray and setting it as the movieSelector variable.
     var giphyApiKey = "nZcsHdIXJYfHdyt5y85wKNj1pmrGVGBh";                                                                                                       // Giphy API Key.
 
     function movieFetch (movie) {                                                                                                                               // Defining a function to call the OMDB API (With variable we pass in on call).
 
-        var listOfMovies = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]                                                                         // Example array for movie list...
         var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy";                                                                               // Query URL with movie.
 
         fetch(queryURL)
@@ -45,7 +45,7 @@ $(document).ready(function() {                                                  
             // Variables for Dynamic Elements - END
         });
     };
-    movieFetch(testMovie);                                                                                                                                      // Calling the movieFetch function.
+    movieFetch(movieSelector);                                                                                                                                  // Calling the movieFetch function and passing in the movieSelector variable.
 
     function giphyFetch (movie, key) {                                                                                                                          // Defining a function to call the giphy API (With variables we pass in on call).
         
@@ -60,5 +60,5 @@ $(document).ready(function() {                                                  
             $("#giphyImg").attr("src", `${gifImgURL}`);                                                                                                         // Giving the giphy image tag a src attribute of giphy's gif source url.
         });
     }
-    giphyFetch(testMovie, giphyApiKey);                                                                                                                         // Calling the giphyFetch function (Passing in testMovie and giphyApiKey).
+    giphyFetch(movieSelector, giphyApiKey);                                                                                                                     // Calling the giphyFetch function (Passing in movieSelector and giphyApiKey).
 });
