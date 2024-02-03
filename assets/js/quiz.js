@@ -1,8 +1,11 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
 
     var secondsLeft = 60;  //timer length - can be changed
     var timeEl = $("#time"); //html for timer
+
+
+
 
     //hiding all game elements until called
     $("#game-screen").addClass("hide");
@@ -20,9 +23,8 @@ $(document).ready(function() {
 
 
 
-    //start button functionality
-    $("#startBtn").on('click', function () {
-        //begin timer
+
+    function startTimer() {
         var timerInterval = setInterval(function () {
             secondsLeft--;
             timeEl.text(secondsLeft);
@@ -31,9 +33,28 @@ $(document).ready(function() {
                 // Clear when time runs out
                 clearInterval(timerInterval);
 
-                // Display end screen here maybe gif beforehand?
+                //show end screen when timer runs out
+                showEndScreen();
+        
             }
         }, 1000);
+    }
+
+    // Function to pause the timer -- call this function when feedback is displayed (when an option is selected)
+    function pauseTimer() {
+        clearInterval(timerInterval);
+    }
+
+    // Function to resume the timer -- call this function when nextQBtn is clicked
+    function resumeTimer() {
+        startTimer();
+    }
+
+
+    //start button functionality
+    $("#startBtn").on('click', function () {
+        //begin timer
+        startTimer();
 
         // Hide start screen and show game screen
         $("#start-screen").addClass("hide");
@@ -45,12 +66,13 @@ $(document).ready(function() {
 
     });
 
+    // give me another clue btn
     $("#clue2").on('click', function () {
 
         //hide 1st clue
         $("#actors").addClass("hide");
         $("#actorsOptions").addClass("hide");
-        
+
 
         //show 2nd clue
         $("#clue2").addClass("hide");
@@ -61,13 +83,14 @@ $(document).ready(function() {
 
     });
 
+    // one more clue btn
     $("#clue3").on('click', function () {
 
         //hide 1st clue
         $("#genre").addClass("hide");
         $("#genreOptions").addClass("hide");
 
-        
+
 
         //show 2nd clue
         $("#clue3").addClass("hide");
@@ -87,7 +110,7 @@ $(document).ready(function() {
         $("#plot").addClass("hide");
         $("#plotOptions").addClass("hide");
 
-        
+
 
         //show feedback
         $("#feedback").removeClass("hide");
@@ -98,10 +121,14 @@ $(document).ready(function() {
     $("#posterBtn").on('click', function () {
 
         //hide gif
-        $("#giphyImg").attr("src","POSTER FROM API")
-        $("#giphyImg").attr("alt","POSTER FROM API")
+        $("#giphyImg").attr("src", "POSTER FROM API")
+        $("#giphyImg").attr("alt", "POSTER FROM API")
 
     });
+
+
+    // Next Question button functionality
+    var currentQuestionIndex = 0;
 
     $("#nextQBtn").on('click', function () {
 
@@ -111,9 +138,49 @@ $(document).ready(function() {
         //start new question from beginning
         $("#game-screen").removeClass("hide");
 
+        // add to the current question index
+        currentQuestionIndex++;
+
+        // check if all 10 questions have been asked
+        // if current question is less than Q10
+        if (currentQuestionIndex < 10) {
+
+            // update the with the next question and clues
+            NextQuestion();
+
+        } else {
+            // all questions have been asked, display the end screen
+            clearInterval(timerInterval);
+            $("#game-screen").addClass("hide");
+            $("#end-screen").removeClass("hide");
+            // logic for submitting scores will go here
+        }
     });
 
+    function NextQuestion() {
+        //reset question page
+        $("#actors").removeClass("hide");
+        $("#actorsOptions").removeClass("hide");
+        $("#clue2").removeClass("hide");
+        $("#genre").addClass("hide");
+        $("#genreOptions").addClass("hide");
+        $("#plot").addClass("hide");
+        $("#plotOptions").addClass("hide");
+        $("#clue3").addClass("hide");
+        // we should update clues and options for each question -- new movie every time
+    }
 
 
-// Add logic for displaying the end screen, submitting scores, etc.
+
+
+    function showEndScreen() {
+        $("#game-screen").addClass("hide");
+        $("#feedback-screen").addClass("hide");
+        $("#end-screen").removeClass("hide");
+    }
+
+
+
+
+
 }); 
