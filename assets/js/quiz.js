@@ -9,9 +9,6 @@ $(document).ready(function () {
     var secondsLeft = 60;  //timer length - can be changed
     var timeEl = $("#time"); //html for timer
 
-
-
-
     //hiding all game elements until called
     $("#game-screen").addClass("hide");
     $("#feedback").addClass("hide");
@@ -42,23 +39,23 @@ $(document).ready(function () {
                 showEndScreen();
             }
         }, 1000);
-    }
+    };
 
     // Function to pause the timer -- call this function when feedback is displayed (when an option is selected)
     function pauseTimer() {
         clearInterval(timerInterval);
-    }
+    };
 
     // Function to resume the timer -- call this function when nextQBtn is clicked
     function resumeTimer() {
         startTimer();
-    }
+    };
 
 
     //start button functionality
     $("#startBtn").on('click', function () {
         //begin timer
-        startTimer();
+        // startTimer(); // --------------- UNCOMMENT THIS!!!! --------------- //
 
         // Hide start screen and show game screen
         $("#start-screen").addClass("hide");
@@ -67,50 +64,34 @@ $(document).ready(function () {
         // Show the first clue
         $("#actors").removeClass("hide");
 
-        //hide 1st clue
-        // $("#actors").addClass("hide");
-        // $("#actorsOptions").addClass("hide");
-
-
-        //show 2nd clue
+        // Hiding the 2nd and 3rd Clue buttons.
         $("#clue2").addClass("hide");
-        $("#genre").removeClass("hide");
-        // $("#genreOptions").removeClass("hide");
-        $("#clue3").removeClass("hide");
+        $("#clue3").addClass("hide");
     });
 
     // give me another clue btn
-    $("#clue2").on('click', function () {
-
-        //hide 1st clue
-        $("#actors").addClass("hide");
-        $("#actorsOptions").addClass("hide");
-
+    $("#clue1").on('click', function () {
 
         //show 2nd clue
-        $("#clue2").addClass("hide");
+        $("#clue1").addClass("hide");
+        $("#clue2").removeClass("hide");
         $("#genre").removeClass("hide");
         $("#genreOptions").removeClass("hide");
-        $("#clue3").removeClass("hide");
         //hide 1st clue
         // $("#genre").addClass("hide");
         // $("#genreOptions").addClass("hide");
     });
 
-    // one more clue btn
-    $("#clue3").on('click', function () {
+     // give me another clue btn
+     $("#clue2").on('click', function () {
 
-        //hide 1st clue
-        $("#genre").addClass("hide");
-        $("#genreOptions").addClass("hide");
         //show 2nd clue
-        $("#clue3").addClass("hide");
+        $("#clue2").addClass("hide");
         $("#plot").removeClass("hide");
-        // $("#plotOptions").removeClass("hide");
+        $("#clue3").removeClass("hide");
         //hide 1st clue
-        $("#genre").addClass("hide");
-        $("#genreOptions").addClass("hide");
-        $("#answerOptions").removeClass("hide");
+        // $("#genre").addClass("hide");
+        // $("#genreOptions").addClass("hide");
     });
 
     // pretending option 4 is correct answer FOR NOW
@@ -118,27 +99,38 @@ $(document).ready(function () {
     $("#happyFeedback").addClass("hide");
 
 
-    $("#plotOptions, #option4").on('click', function () {
+    $("#answerOptions, #option4").on('click', function () {
 
-        //hide question
+        // If correct answer clicked, hiding the clue buttons.
+        $("#clue1").addClass("hide");
+        $("#clue2").addClass("hide");
+
+        // If correct answer clicked, hiding the options.
+        $("#answerOptions").addClass("hide");
+
+        // If correct answer clicked, hiding the clues.
+        $("#actors").addClass("hide");
+        $("#genre").addClass("hide");
         $("#plot").addClass("hide");
-        $("#plotOptions").addClass("hide");
 
-
-
-        //show feedback
+        // If correct answer clicked, showing the feedback.
         $("#feedback").removeClass("hide");
         $("#happyFeedback").removeClass("hide");
 
+        // If the correct answer clicked, showing the Gif.
+        $("#giphyImg").removeClass("hide");
+
     });
 
-    // $("#posterBtn").on('click', function () {
+    $("#posterBtn").on('click', function () {
 
-    //     //hide gif
-    //     $("#giphyImg").attr("src", "POSTER FROM API")
-    //     $("#giphyImg").attr("alt", "POSTER FROM API")
+        // Hiding the Gif when the user clicks "See Poster".
+        $("#giphyImg").addClass("hide");
+        
+        // Showing the Poster when the user clicks "See Poster".
+        $("#posterImg").removeClass("hide");
 
-    // });
+    });
 
 
     // Next Question button functionality

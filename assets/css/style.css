@@ -191,7 +191,7 @@
 .smaller-text {
     font-size: 50%;
 }
-#clue2, #clue3{
+#clue1, #clue2{
     background: radial-gradient(circle, #ffd700, #b8860b);
     color:#87020b;
 }
