@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    var progressPercentage = 0; // Add this line to declare a global variable for progress
 
     $("#genre").addClass("hide");
     // $("#genreOptions").addClass("hide");
@@ -154,10 +155,21 @@ $(document).ready(function () {
         // if current question is less than Q10
         if (currentQuestionIndex < 10) {
 
+             // Increment progress by 10%
+            progressPercentage += 10;
+
+            // Update the progress bar
+            $("#customProgressBar").css("width", progressPercentage + "%").attr("aria-valuenow", progressPercentage).text(progressPercentage.toFixed(0) + "%");
             // update the with the next question and clues
             NextQuestion();
 
         } else {
+            // Set progress to 100% explicitly
+            progressPercentage = 100;
+
+            // Update the progress bar
+            $("#customProgressBar").css("width", progressPercentage + "%").attr("aria-valuenow", progressPercentage).text(progressPercentage.toFixed(0) + "%");
+            
             // all questions have been asked, display the end screen
             clearInterval(timerInterval);
             $("#game-screen").addClass("hide");
