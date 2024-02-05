@@ -57,6 +57,7 @@ $(document).ready(function () {
     $("#startBtn").on('click', function () {
         //begin timer
         startTimer(); // Calling the startTimer function to start the timer.
+        
 
         // Hide start screen and show game screen
         $("#start-screen").addClass("hide");
@@ -77,22 +78,17 @@ $(document).ready(function () {
         $("#clue1").addClass("hide");
         $("#clue2").removeClass("hide");
         $("#genre").removeClass("hide");
-        $("#genreOptions").removeClass("hide");
-        //hide 1st clue
-        // $("#genre").addClass("hide");
-        // $("#genreOptions").addClass("hide");
+
     });
 
     // give me another clue btn
     $("#clue2").on('click', function () {
 
-        //show 2nd clue
+        //show 3rd clue
         $("#clue2").addClass("hide");
         $("#plot").removeClass("hide");
         $("#clue3").removeClass("hide");
-        //hide 1st clue
-        // $("#genre").addClass("hide");
-        // $("#genreOptions").addClass("hide");
+
     });
 
     // pretending option 4 is correct answer FOR NOW
@@ -247,7 +243,7 @@ $(document).ready(function () {
         // Call the function to save user input and score to local storage
         submitGame();
     });
-
+  
     // Function to retrieve scores from local storage
     function getScores() {
         // Retrieve existing scores from local storage or initialize an empty array
@@ -302,5 +298,4 @@ $(document).ready(function () {
         // Redirect to index.html
         window.location.href = "index.html";
     });
-
 });
