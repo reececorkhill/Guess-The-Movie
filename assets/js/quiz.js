@@ -216,7 +216,7 @@ $(document).ready(function () {
     function submitGame() {
         // Get user input from an input field with id "userInput" using jQuery
         var userInput = $('#userInput').val();
-        var score = 22; //NEED TO BE DELETE WHEN LOCAL VAR SCORE WILL BE AVAILABLE.
+        var score = 77; //NEED TO BE DELETE WHEN LOCAL VAR SCORE WILL BE AVAILABLE.
         // Get the current score from a local variable.
         var currentScore = score;
         // Retrieve existing scores from local storage or initialize an empty array
@@ -224,7 +224,7 @@ $(document).ready(function () {
         // Check if the name already exist in the scores
         var existingIndex = -1;
         for (var i = 0; i < existingScores.length; i++) {
-            if (existingScores[i].names === userInput) {
+            if (existingScores[i].name === userInput) {
                 existingIndex = i;
                 break;
             }
