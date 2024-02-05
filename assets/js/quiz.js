@@ -7,7 +7,7 @@ $(document).ready(function () {
     $("#plot").addClass("hide");
     // $("#plotOptions").addClass("hide");
   
-    var secondsLeft = 60;  //timer length - can be changed
+    var secondsLeft = 30;  //timer length - can be changed
     var timeEl = $("#time"); //html for timer
 
     //hiding all game elements until called
@@ -24,34 +24,19 @@ $(document).ready(function () {
     $("#clue3").addClass("hide");
 
 
-
-
-
     function startTimer() {
         var timerInterval = setInterval(function () {
             secondsLeft--;
             timeEl.text(secondsLeft);
 
-            if (secondsLeft <= 0) {
+            if (secondsLeft <= 0 || progressPercentage >= 100){
                 // Clear when time runs out
                 clearInterval(timerInterval);
-              
                 //show end screen when timer runs out
                 showEndScreen();
             }
         }, 1000);
     };
-
-    // Function to pause the timer -- call this function when feedback is displayed (when an option is selected)
-    function pauseTimer() {
-        clearInterval(timerInterval);
-    };
-
-    // Function to resume the timer -- call this function when nextQBtn is clicked
-    function resumeTimer() {
-        startTimer();
-    };
-
 
     //start button functionality
     $("#startBtn").on('click', function () {
@@ -166,10 +151,8 @@ $(document).ready(function () {
         } else {
             // Set progress to 100% explicitly
             progressPercentage = 100;
-
             // Update the progress bar
             $("#customProgressBar").css("width", progressPercentage + "%").attr("aria-valuenow", progressPercentage).text(progressPercentage.toFixed(0) + "%");
-            
             // all questions have been asked, display the end screen
             clearInterval(timerInterval);
             $("#game-screen").addClass("hide");
@@ -191,4 +174,5 @@ $(document).ready(function () {
         $("#feedback-screen").addClass("hide");
         $("#end-screen").removeClass("hide");
     };
-}); 
+
+});
