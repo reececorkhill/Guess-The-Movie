@@ -259,6 +259,11 @@ $(document).ready(function () {
         var scores = getScores();
         var playerContainer = $('.playerContainer');
 
+        // Sort the scores array from higher to lower score
+        scores.sort(function(a, b) {
+            return b.score - a.score;
+        });
+
         // Clear previous content
         playerContainer.empty();
 
