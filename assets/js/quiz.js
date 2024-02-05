@@ -212,7 +212,7 @@ $(document).ready(function () {
     function submitGame() {
         // Get user input from an input field with id "userInput" using jQuery
         var userInput = $('#userInput').val();
-        var score = 88; //NEED TO BE DELETE WHEN LOCAL VAR SCORE WILL BE AVAILABLE.
+        var score = 77; //NEED TO BE DELETE WHEN LOCAL VAR SCORE WILL BE AVAILABLE.
         // Get the current score from a local variable.
         var currentScore = score;
         // Retrieve existing scores from local storage or initialize an empty array
@@ -220,7 +220,7 @@ $(document).ready(function () {
         // Check if the name already exist in the scores
         var existingIndex = -1;
         for (var i = 0; i < existingScores.length; i++) {
-            if (existingScores[i].names === userInput) {
+            if (existingScores[i].name === userInput) {
                 existingIndex = i;
                 break;
             }
@@ -242,5 +242,60 @@ $(document).ready(function () {
     $("#submitUserNameBtn").on("click", function () {
         // Call the function to save user input and score to local storage
         submitGame();
+    });
+  
+    // Function to retrieve scores from local storage
+    function getScores() {
+        // Retrieve existing scores from local storage or initialize an empty array
+        var existingScores = JSON.parse(localStorage.getItem("quizScores")) || [];
+        return existingScores;
+    }
+    // Function to dynamically create player elements and append to playerContainer
+    function displayScores() {
+        var scores = getScores();
+        var playerContainer = $('.playerContainer');
+
+        // Sort the scores array from higher to lower score
+        scores.sort(function(a, b) {
+            return b.score - a.score;
+        });
+
+        // Clear previous content
+        playerContainer.empty();
+
+        // Iterate through the scores and create player elements
+        scores.forEach(function (score) {
+            // Create a player element
+            var playerElement = $('<div class="player">');
+
+            // Determine the image source based on the score
+            var imgSrc = score.score < 10 ? './assets/images/raspberryAward.png' : './assets/images/oscarAward.png';
+
+            // Create an image element
+            var imgElement = $('<img>').attr('src', imgSrc).attr('alt', 'player');
+
+            // Create game details container
+            var gameDetailsElement = $('<div class="game-details">');
+
+            // Create player name and score elements
+            var playerNameElement = $('<div class="player-name">').text(score.name);
+            var scoreElement = $('<div class="score">').text(score.score);
+
+            // Append elements to the player element
+            gameDetailsElement.append(playerNameElement, scoreElement);
+            playerElement.append(imgElement, gameDetailsElement);
+
+            // Append player element to the playerContainer
+            playerContainer.append(playerElement);
+        });
+    }
+
+    // Call the function to display scores and create player elements
+    displayScores();
+
+    // Event listener for the "PLAY AGAIN" button using jQuery
+    $("#playBtn").on("click", function() {
+        // Redirect to index.html
+        window.location.href = "index.html";
     });
 });
