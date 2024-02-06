@@ -318,7 +318,7 @@
     align-items: center;
     border-radius: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    color: aliceblue;
+    color: #87020b;
     background-color: #ffcc00;
 }
 
@@ -329,7 +329,7 @@
     align-items: center;
     border-radius: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    color: aliceblue;
+    color: #87020b;
     background-color: #ffcc00;
 }
 
@@ -340,6 +340,35 @@
     align-items: center;
     border-radius: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    color: aliceblue;
+    color: #87020b;
     background-color: #ffcc00;
+}
+
+
+#option1 {
+    background-color: #7ba3fe;
+}
+
+#option2 {
+    background-color: #7ba3fe;
+}
+#option3 {
+    background-color: #7ba3fe;
+}
+
+#option4 {
+    background-color: #7ba3fe;
+}
+
+#option1:hover {
+    background-color: #b3caff;
+}
+#option2:hover {
+    background-color: #b3caff;
+}
+#option3:hover {
+    background-color: #b3caff;
+}
+#option4:hover {
+    background-color: #b3caff;
 }
