@@ -91,51 +91,49 @@ $(document).ready(function () {
 
     });
 
-    // pretending option 4 is correct answer FOR NOW
-    $("#sadFeedback").addClass("hide");
-    $("#happyFeedback").addClass("hide");
-
-
-    $("#answerOptions, #option4").on('click', function () {
-
-        // Hiding the poster image so only the movie gif displays when answer is clicked.
-        $("#posterImg").addClass("hide");
-
-        // If correct answer clicked, hiding the clue buttons.
-        $("#clue1").addClass("hide");
-        $("#clue2").addClass("hide");
-
-        // If correct answer clicked, hiding the options.
-        $("#answerOptions").addClass("hide");
-
-        // If correct answer clicked, hiding the clues.
-        $("#actors").addClass("hide");
-        $("#genre").addClass("hide");
-        $("#plot").addClass("hide");
-
-        correctFeedback();
-
-
-
-        // If the correct answer clicked, showing the Gif.
-        $("#giphyImg").removeClass("hide");
-
+    $("#answerOptions").on("click", function (event) {
+        var selectedOption = $(event.target).text();
+        if (selectedOption === correctAnswer[0]) {
+            console.log("Correct!")
+            $("#sadFeedback").addClass("hide");
+            $("#happyFeedback").addClass("hide");
+            correctFeedback();
+        } else {
+            console.log("Wrong!");
+            $("#sadFeedback").addClass("hide");
+            $("#happyFeedback").addClass("hide");
+            incorrectFeedback();
+        };
     });
-
 
     function correctFeedback() {
         console.log("correct Feedback");
-        // If correct answer clicked, showing the feedback.
+        // If correct answer clicked, showing happy feedback.
         pauseTimer()
+        $("#actors").addClass("hide");
+        $("#clue1").addClass("hide");
+        $("#clue2").addClass("hide");
+        $("#answerOptions").addClass("hide");
+        $("#genre").addClass("hide");
+        $("#plot").addClass("hide");
         $("#feedback").removeClass("hide");
         $("#happyFeedback").removeClass("hide");
-    }
+        $("#posterImg").addClass("hide");
+    };
 
     function incorrectFeedback() {
+        // If incorrect answer clicked, showing sad feedback.
         pauseTimer()
+        $("#actors").addClass("hide");
+        $("#clue1").addClass("hide");
+        $("#clue2").addClass("hide");
+        $("#answerOptions").addClass("hide");
+        $("#genre").addClass("hide");
+        $("#plot").addClass("hide");
         $("#feedback").removeClass("hide");
         $("#sadFeedback").removeClass("hide");
-    }
+        $("#posterImg").addClass("hide");
+    };
 
     // Function to resume the timer -- call this function when nextQBtn is clicked
     function resumeTimer() {
@@ -165,6 +163,12 @@ $(document).ready(function () {
 
         //start new question from beginning
         $("#game-screen").removeClass("hide");
+
+        // Display the giphyImg
+        $("#giphyImg").removeClass("hide");
+
+        // Hide the posterImg
+        $("#posterImg").addClass("hide");
 
         // add to the current question index
         currentQuestionIndex++;
@@ -199,6 +203,8 @@ $(document).ready(function () {
         $("#actors").removeClass("hide");
         $("#answerOptions").removeClass("hide");
         $("#clue1").removeClass("hide");
+        $("#genre").addClass("hide");
+        $("#plot").addClass("hide");
         // we should update clues and options for each question -- new movie every time
     };
 
