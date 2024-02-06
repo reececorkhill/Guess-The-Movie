@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    // console.log("In Quiz file --> fetchMovie(): ", movieFetch )
+
     var progressPercentage = 0; // Add this line to declare a global variable for progress
 
     $("#genre").addClass("hide");
@@ -55,7 +57,7 @@ $(document).ready(function () {
 
     //start button functionality
     $("#startBtn").on('click', function () {
-        //begin timer
+
         startTimer(); // Calling the startTimer function to start the timer.
         
 
@@ -155,8 +157,10 @@ $(document).ready(function () {
     var currentQuestionIndex = 0;
 
     $("#nextQBtn").on('click', function () {
-
+        getQuestion()
+        optionsButtons(questionMovieNames)
         resumeTimer()
+        giphyFetch(queryMovie, giphyApiKey);
 
         //hide feedback
         $("#feedback").addClass("hide");
@@ -303,5 +307,6 @@ $(document).ready(function () {
     $("#playBtn").on("click", function() {
         // Redirect to index.html
         window.location.href = "index.html";
+        getQuestion()
     });
 });
