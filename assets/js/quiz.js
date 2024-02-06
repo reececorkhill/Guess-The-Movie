@@ -91,23 +91,20 @@ $(document).ready(function () {
 
     });
 
-    for (var i = 0; i < correctAnswer.length; i++) {
-        $("#option" + (i + 1)).on("click", function () {
-            var selectedOption = $(this).text();
-
-            if (selectedOption === correctAnswer[0]) {
-                console.log("Correct!")
-                $("#sadFeedback").addClass("hide");
-                $("#happyFeedback").addClass("hide");
-                correctFeedback();
-            } else {
-                console.log("Wrong!");
-                $("#sadFeedback").addClass("hide");
-                $("#happyFeedback").addClass("hide");
-                incorrectFeedback();
-            }
-        });
-    };
+    $("#answerOptions").on("click", function (event) {
+        var selectedOption = $(event.target).text();
+        if (selectedOption === correctAnswer[0]) {
+            console.log("Correct!")
+            $("#sadFeedback").addClass("hide");
+            $("#happyFeedback").addClass("hide");
+            correctFeedback();
+        } else {
+            console.log("Wrong!");
+            $("#sadFeedback").addClass("hide");
+            $("#happyFeedback").addClass("hide");
+            incorrectFeedback();
+        };
+    });
 
     function correctFeedback() {
         console.log("correct Feedback");
@@ -166,6 +163,12 @@ $(document).ready(function () {
 
         //start new question from beginning
         $("#game-screen").removeClass("hide");
+
+        // Display the giphyImg
+        $("#giphyImg").removeClass("hide");
+
+        // Hide the posterImg
+        $("#posterImg").addClass("hide");
 
         // add to the current question index
         currentQuestionIndex++;
