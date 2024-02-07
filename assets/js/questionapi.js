@@ -3,35 +3,22 @@ var movieArray = ["Poor Things", "Saltburn", "The Lord of the Rings: The Fellows
 
 var giphyApiKey = "nZcsHdIXJYfHdyt5y85wKNj1pmrGVGBh";                                                                                                           // Giphy API Key.
 
-// We need to think of HOW and WHEN do we GET NEW DATA (?)
-/*
 var correctAnswer = [];                                                                                                                                         // Array to hold the correct answer for each question.
-var questionMovieNames = getRandomMovies(movieArray, 4);                                                                                                        // Getting 4 random movies from the movieArray and adding them to a new array.
-var randomIndex = Math.floor(Math.random() * questionMovieNames.length);                                                                                        // Picking a random movie index from the new array.
-var queryMovie = questionMovieNames[randomIndex];                                                                                                               // Setting the queryMovie variable to the random movie.
-correctAnswer.push(queryMovie);    
-*/ 
+var questionMovieNames;                                                                                                                                         // Getting 4 random movies from the movieArray and adding them to a new array.
+var randomIndex;                                                                                                                                                // Picking a random movie index from the new array.
+var queryMovie;                                                                                                                                                 // Setting the queryMovie variable to the random movie.
 
-var correctAnswer = [];                                                                                                                                         // Array to hold the correct answer for each question.
-var questionMovieNames;                                                                                           // Getting 4 random movies from the movieArray and adding them to a new array.
-var randomIndex;                                                                                    // Picking a random movie index from the new array.
-var queryMovie;                                                                                                         // Setting the queryMovie variable to the random movie.
-                                                                                                                                // Pushing the correct movie to the correctAnswer array.
 function getQuestion() {
     
     correctAnswer = [];                                                                                                                                         // Array to hold the correct answer for each question.
     questionMovieNames = getRandomMovies(movieArray, 4);                                                                                                        // Getting 4 random movies from the movieArray and adding them to a new array.
     randomIndex = Math.floor(Math.random() * questionMovieNames.length);                                                                                        // Picking a random movie index from the new array.
     queryMovie = questionMovieNames[randomIndex];                                                                                                               // Setting the queryMovie variable to the random movie.
-    correctAnswer.push(queryMovie);   
+    correctAnswer.push(queryMovie);                                                                                                                             // Pushing the correct movie to the correctAnswer array. 
     
-    console.log("New Data: ", queryMovie, questionMovieNames);
-
-    // Pushing the correct movie to the correctAnswer array.
     movieFetch(queryMovie);
-}// Pushing the correct movie to the correctAnswer array.
+}
 getQuestion()
-
 
 function getRandomMovies(array, count) {                                                                                                                        // Defining a function to randomise the movieArray.
     var shuffledArray = array.sort(() => Math.random() - 0.5);                                                                                                  // Shuffling the array with in random order.
@@ -57,7 +44,6 @@ function movieFetch(movie) {                                                    
         return response.json();
     })
     .then(function (data) {
-        console.log("Data: ", data);
     // Variables for Response Data - START
     var title = data.Title;                                                                                                                                     // Extracting the Title from response.
     var actors = data.Actors;                                                                                                                                   // Extracting the Actors from response.
@@ -74,24 +60,21 @@ function movieFetch(movie) {                                                    
     movieDiv.append(movieTitleH1);                                                                                                                              // Appending the H1 element to the movie div.
 
     var actorsP = $("<p>");                                                                                                                                     // Creating a P element for the actors.
-    actorsP.text(actors);                                                                                                                               // Adding the actors from API data.
-    $("#cast-content").empty().append(actorsP);                                                                                                                               // Appending the P element to the actors div.
+    actorsP.text(actors);                                                                                                                                       // Adding the actors from API data.
+    $("#cast-content").empty().append(actorsP);                                                                                                                 // Appending the P element to the actors div.
 
     var genreP = $("<p>");                                                                                                                                      // Creating a P element for the genres.
     genreP.text(genres);                                                                                                                                        // Adding the genres from API data.
-    $("#genre-content").empty().append(genreP);                                                                                                                                 // Appending the P element to the genre div.
+    $("#genre-content").empty().append(genreP);                                                                                                                 // Appending the P element to the genre div.
 
     var plotP = $("<p>");                                                                                                                                       // Creating a P element for the plot.
     plotP.text(plot);                                                                                                                                           // Adding the plot from API data.
-    $("#plot-content").empty().append(plotP);                                                                                                                                   // Appending the P element to the plot div.
+    $("#plot-content").empty().append(plotP);                                                                                                                   // Appending the P element to the plot div.
 
     $("#posterImg").attr("src", `${posterSource}`);                                                                                                             // Giving the poster image tag a src attribute of the poster source url.
     // Variables for Dynamic Elements - END
     });
 };
-
-// we may need to think of WHEN do we trigger/CALL/InVOKE this function AND with WHAT DATA(movie) (?)
-// movieFetch(queryMovie);                                                                                                                                         // Calling the movieFetch function and passing in the queryMovie variable.
 
 function giphyFetch(movie, key) {                                                                                                                               // Defining a function to call the giphy API (With variables we pass in on call).
 

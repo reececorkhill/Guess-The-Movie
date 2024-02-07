@@ -1,13 +1,10 @@
 $(document).ready(function () {
-    // console.log("In Quiz file --> fetchMovie(): ", movieFetch )
+
     var score = 30;
     var progressPercentage = 0; // Add this line to declare a global variable for progress
 
     $("#genre").addClass("hide");
-    // $("#genreOptions").addClass("hide");
-
     $("#plot").addClass("hide");
-    // $("#plotOptions").addClass("hide");
 
     var secondsLeft = 60;  //timer length - can be changed
     var timeEl = $("#time"); //html for timer
@@ -45,7 +42,6 @@ $(document).ready(function () {
 
     // Function to pause the timer -- call this function when feedback is displayed (when an option is selected)
     function pauseTimer() {
-        console.log("pausing");
         clearInterval(timerInterval);
     };
 
@@ -96,12 +92,10 @@ $(document).ready(function () {
     $("#answerOptions").on("click", function (event) {
         var selectedOption = $(event.target).text();
         if (selectedOption === correctAnswer[0]) {
-            console.log("Correct!")
             $("#sadFeedback").addClass("hide");
             $("#happyFeedback").addClass("hide");
             correctFeedback();
         } else {
-            console.log("Wrong!");
             $("#sadFeedback").addClass("hide");
             $("#happyFeedback").addClass("hide");
             incorrectFeedback();
@@ -109,7 +103,6 @@ $(document).ready(function () {
     });
 
     function correctFeedback() {
-        console.log("correct Feedback");
         // If correct answer clicked, showing happy feedback.
         pauseTimer()
         $("#actors").addClass("hide");
@@ -210,7 +203,6 @@ $(document).ready(function () {
         $("#clue1").removeClass("hide");
         $("#genre").addClass("hide");
         $("#plot").addClass("hide");
-        // we should update clues and options for each question -- new movie every time
     };
 
     function showEndScreen() {
@@ -224,7 +216,6 @@ $(document).ready(function () {
     function submitGame() {
         // Get user input from an input field with id "userInput" using jQuery
         var userInput = $('#userInput').val();
-        // var score = 77; //NEED TO BE DELETE WHEN LOCAL VAR SCORE WILL BE AVAILABLE.
         // Get the current score from a local variable.
         var currentScore = score;
         // Retrieve existing scores from local storage or initialize an empty array
