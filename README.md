@@ -1,61 +1,72 @@
-https://reececorkhill.github.io/Guess-The-Movie/
-
 # Guess-The-Movie
-
-Movie Guessing Game
-
 Welcome to the Movie Guessing Game! This is a fun and interactive web-based game where players guess the title of a movie based on clues provided.
-Table of Contents
 
-    Introduction
-    Features
-    Getting Started
-    Gameplay
-    Technologies Used
-    Contributing
-    License
-
-Introduction
+## Description
 
 The Movie Guessing Game is a web application designed to entertain users by testing their knowledge of movies. The game presents players with a series of questions, each containing clues related to a specific movie. Players must guess the correct movie title based on the clues provided within a time limit.
-Features
 
-    Interactive gameplay with timer functionality.
-    Multiple levels of difficulty with increasing complexity.
-    Clues provided to help players guess the movie title.
-    Feedback provided after each answer.
-    Leaderboard to track high scores.
-    Responsive design for seamless gameplay on various devices.
+**Features of Guess The Movie:**
 
-Getting Started
+- Interactive gameplay with timer functionality.
+- Multiple levels of difficulty with increasing complexity.
+- Clues provided to help players guess the movie title.
+- Feedback provided after each answer.
+- Leaderboard to track high scores.
+- Responsive design for seamless gameplay on various devices.
 
-To play the Movie Guessing Game, simply visit the game's website or host it locally on your machine. No installation is required.
-Gameplay
+## Table of Contents
 
-    Start the game by clicking the "PLAY" button.
-    Guess the movie title based on the clues provided.
-    Use the "Give me another clue" button to reveal additional clues if needed.
-    Select your answer from the available options.
-    Receive feedback on your answer.
-    Proceed to the next question until all questions are answered.
-    Submit your name and score to the leaderboard at the end of the game.
-
-Technologies Used
-
-    HTML
-    CSS (Bootstrap)
-    JavaScript (jQuery)
-    APIs (OMDB, Giphy)
-    Local Storage
-
-Credits: 
-
-    Guess The Movie Game was develpoted by: Reece Corkhill, Kate Pospiech, Nicole Sharpe, Artur Piasecki
+- [Description](#description)
+- [Usage](#usage)
+- [Instructions](#instructions)
+- [Technologies](#technologies)
+- [Credits](#credits)
+- [License](#license)
 
 
-Contributing
+## Usage
 
-Contributions to the Movie Guessing Game are welcome! If you have any suggestions, feature requests, or bug reports, please feel free to open an issue or submit a pull request.
-License
+To play the Movie Guessing Game, simply visit the game's website <a href="https://reececorkhill.github.io/Guess-The-Movie/"> here</a> !
 
-The Movie Guessing Game is licensed under the MIT License.
+![Screenshot of Guess The Movie Game start screen.](assets/images/Guess-The-Movie-Start.png)
+![Screenshot of Guess The Movie Game game screen.](assets/images/Guess-The-Movie-Game.png)
+![Screenshot of Guess The Movie Game image screen.](assets/images/Guess-The-Movie-Image.png)
+![Screenshot of Guess The Movie Game end screen.](assets/images/Guess-The-Movie-End.png)
+![Screenshot of Guess The Movie Game leaderboard screen.](assets/images/Guess-The-Movie-Leaderboard.png)
+
+## Instructions
+
+- Start the game by clicking the "PLAY" button.
+- Guess the movie title based on the clues provided.
+- Use the "Give me another clue" button to reveal additional clues if needed.
+- Select your answer from the available options.
+- Receive feedback on your answer.
+- Proceed to the next question until all questions are answered.
+- Submit your name and score to the leaderboard at the end of the game.
+
+## Technologies
+
+- HTML
+- CSS (Bootstrap)
+- JavaScript (jQuery)
+- APIs (OMDB, Giphy)
+- Local Storage
+
+## Credits
+
+- <a href="https://github.com/Artur158">Artur158</a> | HTML and CSS
+- <a href="https://github.com/designs-by-kate">designs-by-kate</a> | HTML and CSS
+- <a href="https://github.com/nicosharpe">nicosharpe</a> | JavaScript
+- <a href="https://github.com/reececorkhill">reececorkhill</a> | JavaScript and API
+
+## License
+
+MIT License
+
+Copyright (c) 2024 reececorkhill
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
