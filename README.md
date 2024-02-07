@@ -48,6 +48,11 @@ Technologies Used
     APIs (OMDB, Giphy)
     Local Storage
 
+Credits: 
+
+    Guess The Movie Game was develpoted by: Reece Corkhill, Kate Pospiech, Nicole Sharpe, Artur Piasecki
+
+
 Contributing
 
 Contributions to the Movie Guessing Game are welcome! If you have any suggestions, feature requests, or bug reports, please feel free to open an issue or submit a pull request.
