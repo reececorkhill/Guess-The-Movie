@@ -1,5 +1,5 @@
 // Array of movies for the quiz.
-var movieArray = ["Poor Things", "Saltburn", "The Lord of the Rings: The Fellowship of the Ring", "Django Unchained", "Finding Nemo", "The Beach", "Shutter Island", "Titanic", "Home Alone", "Superbad", "Shrek", "Pinapple Express", "Legally Blonde", "Lara Croft: Tomb Raider", "Good Will Hunting", "Up", "Bee Movie", "Interstellar", "Fight Club", "Fear and Loathing in Las Vegas", "Click", "Kill Bill", "Cast Away", "Blow", "American Psycho", "A Nightmare on Elm Street", "Pulp Fiction", "The Terminator", "The Dark Knight Rises", "Saving Private Ryan", "Toy Story", "Zombieland", "The Gentlemen", "The Conjuring", "Black Hawk Down", "Avatar The Way of Water"];
+var movieArray = ["Poor Things", "Saltburn", "The Lord of the Rings: The Fellowship of the Ring", "Django Unchained", "Finding Nemo", "The Beach", "Shutter Island", "Titanic", "Home Alone", "Superbad", "Shrek", "Pineapple Express", "Legally Blonde", "Lara Croft: Tomb Raider", "Good Will Hunting", "Up", "Bee Movie", "Interstellar", "Fight Club", "Fear and Loathing in Las Vegas", "Click", "Kill Bill", "Cast Away", "Blow", "American Psycho", "A Nightmare on Elm Street", "Pulp Fiction", "The Terminator", "The Dark Knight Rises", "Saving Private Ryan", "Toy Story", "Zombieland", "The Gentlemen", "The Conjuring", "Black Hawk Down", "Avatar The Way of Water"];
 
 var giphyApiKey = "nZcsHdIXJYfHdyt5y85wKNj1pmrGVGBh";                                                                                                           // Giphy API Key.
 
@@ -106,8 +106,4 @@ function giphyFetch(movie, key) {                                               
         $("#giphyImg").attr("src", `${gifImgURL}`);                                                                                                             // Giving the giphy image tag a src attribute of giphy's gif source url.
     });
 };
-giphyFetch(queryMovie, giphyApiKey);       
-
-// Kick off Logic in this file
-// getQuestion();
-// Calling the giphyFetch function (Passing in queryMovie and giphyApiKey).
+giphyFetch(queryMovie, giphyApiKey);                                                                                                                            // Calling the giphyFetch function (Passing in queryMovie and giphyApiKey). 
