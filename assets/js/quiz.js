@@ -217,6 +217,7 @@ $(document).ready(function () {
         $("#game-screen").addClass("hide");
         $("#feedback").addClass("hide");
         $("#end-screen").removeClass("hide");
+        $("#final-score").text(score);
     };
 
     // Function to save user input and score to local storage
@@ -310,6 +311,4 @@ $(document).ready(function () {
         window.location.href = "index.html";
         getQuestion()
     });
-
-    $("#final-score").text(score);
 });
