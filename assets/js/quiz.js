@@ -310,4 +310,6 @@ $(document).ready(function () {
         window.location.href = "index.html";
         getQuestion()
     });
+
+    $("#final-score").text(score);
 });
