@@ -28,11 +28,11 @@ The Movie Guessing Game is a web application designed to entertain users by test
 
 To play the Movie Guessing Game, simply visit the game's website <a href="https://reececorkhill.github.io/Guess-The-Movie/"> here</a> !
 
-![Screenshot of Guess The Movie Game start screen.](assets/images/Guess-The-Movie-Start.png)
-![Screenshot of Guess The Movie Game game screen.](assets/images/Guess-The-Movie-Game.png)
-![Screenshot of Guess The Movie Game image screen.](assets/images/Guess-The-Movie-Image.png)
-![Screenshot of Guess The Movie Game end screen.](assets/images/Guess-The-Movie-End.png)
-![Screenshot of Guess The Movie Game leaderboard screen.](assets/images/Guess-The-Movie-Leaderboard.png)
+![Screenshot of Guess The Movie Game start screen.](assets/images/Guess-The-Movie-Start.PNG)
+![Screenshot of Guess The Movie Game game screen.](assets/images/Guess-The-Movie-Game.PNG)
+![Screenshot of Guess The Movie Game image screen.](assets/images/Guess-The-Movie-Image.PNG)
+![Screenshot of Guess The Movie Game end screen.](assets/images/Guess-The-Movie-End.PNG)
+![Screenshot of Guess The Movie Game leaderboard screen.](assets/images/Guess-The-Movie-Leaderboard.PNG)
 
 ## Instructions
 
