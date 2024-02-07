@@ -19,14 +19,18 @@ body {
     padding: 0;
 }
 
-.container {
+.container{
+    text-align: center;
+}
+
+.playerContainer {
     max-width: 300px;
     margin: 50px auto;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    max-height: 600px;
+    max-height: 500px;
     overflow-y: auto;
 }
 
@@ -58,4 +62,20 @@ body {
 
 .score {
     color: var(--contrast-red);
+}
+
+/* Styles for the start button */
+#playBtn {
+    background-color: black;
+    color: transparent;
+    -webkit-text-stroke: 2px #DDA515;
+    font-size: 2rem;
+    cursor: pointer;
+    border: none;
+}
+
+#playBtn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: transparent;
+    -webkit-text-stroke: 2px #dda415a6;
 }
