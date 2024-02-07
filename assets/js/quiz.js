@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // console.log("In Quiz file --> fetchMovie(): ", movieFetch )
-
+    var score = 30;
     var progressPercentage = 0; // Add this line to declare a global variable for progress
 
     $("#genre").addClass("hide");
@@ -80,7 +80,7 @@ $(document).ready(function () {
         $("#clue1").addClass("hide");
         $("#clue2").removeClass("hide");
         $("#genre").removeClass("hide");
-
+        score = score - 1;
     });
 
     // give me another clue btn
@@ -90,7 +90,7 @@ $(document).ready(function () {
         $("#clue2").addClass("hide");
         $("#plot").removeClass("hide");
         $("#clue3").removeClass("hide");
-
+        score = score - 1;
     });
 
     $("#answerOptions").on("click", function (event) {
@@ -135,6 +135,7 @@ $(document).ready(function () {
         $("#feedback").removeClass("hide");
         $("#sadFeedback").removeClass("hide");
         $("#posterImg").addClass("hide");
+        score = score - 3;
     };
 
     // Function to resume the timer -- call this function when nextQBtn is clicked
@@ -222,7 +223,7 @@ $(document).ready(function () {
     function submitGame() {
         // Get user input from an input field with id "userInput" using jQuery
         var userInput = $('#userInput').val();
-        var score = 77; //NEED TO BE DELETE WHEN LOCAL VAR SCORE WILL BE AVAILABLE.
+        // var score = 77; //NEED TO BE DELETE WHEN LOCAL VAR SCORE WILL BE AVAILABLE.
         // Get the current score from a local variable.
         var currentScore = score;
         // Retrieve existing scores from local storage or initialize an empty array
